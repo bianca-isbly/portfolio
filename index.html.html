@@ -1,470 +1,367 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bianca Isabely - Assessoria de Marketing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Bianca Isabely | Assessoria de Marketing</title>
     <style>
+        /* --- CONFIGURAÇÕES GERAIS --- */
         :root {
-            --roxo-escuro: #4A0E4E; /* Ajustado para um roxo elegante */
-            --rosa-claro: #FCE4EC;
-            --preto: #000000;
-            --branco: #FFFFFF;
-            --cinza-texto: #333333;
+            --cor-roxo-escuro: #4B0082; /* Identidade Visual */
+            --cor-rosa-claro: #F3E5F5;
+            --cor-branco: #ffffff;
+            --cor-texto: #333333;
+            --cor-whats: #25D366; /* Verde WhatsApp */
+            --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--fonte-principal);
+            color: var(--cor-texto);
             line-height: 1.6;
-            color: var(--cinza-texto);
-            background-color: var(--branco);
+            background-color: var(--cor-branco);
         }
 
-        /* Utilitários */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
+        h1, h2, h3 { color: var(--cor-roxo-escuro); font-weight: 700; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        /* IMAGENS */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--roxo-escuro);
-            color: var(--branco);
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: 0.3s;
-            margin-top: 20px;
+        /* SEÇÕES */
+        section { padding: 50px 0; }
+        .bg-light { background-color: var(--cor-rosa-claro); }
+        
+        .grid-2 { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+            align-items: center; 
         }
 
-        .btn:hover {
-            background-color: #6A1B9A;
-            transform: translateY(-3px);
+        /* CAPA / HERO */
+        .hero { text-align: center; padding: 60px 20px; }
+        .hero-img { 
+            width: 250px; 
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 50%; 
+            margin: 20px auto; 
+            border: 4px solid var(--cor-roxo-escuro); 
         }
 
-        h2 {
-            color: var(--roxo-escuro);
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-align: center;
+        /* LISTAS ESTILIZADAS */
+        .card-list { list-style: none; }
+        .card-list li {
+            background: #fff; padding: 15px; margin-bottom: 10px;
+            border-left: 5px solid var(--cor-roxo-escuro);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        h3 {
-            color: var(--preto);
-            margin-bottom: 10px;
-        }
-
-        /* Hero Section (Capa) */
-        header {
-            background-color: var(--branco);
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-image: linear-gradient(to bottom right, #fff, var(--rosa-claro));
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            color: var(--preto);
-            line-height: 1.2;
-        }
-
-        header p {
-            font-size: 1.5rem;
-            color: var(--roxo-escuro);
-            margin-top: 10px;
-            font-weight: 300;
-        }
-
-        /* Sobre Mim */
-        .sobre {
-            padding: 80px 0;
-            background-color: var(--branco);
-        }
-
-        .sobre-grid {
+        /* CLIENTES (LOGOS) */
+        .clients-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .sobre-img {
-            width: 100%;
-            height: 400px;
-            background-color: #ddd; /* Placeholder */
-            border-radius: 20px 0 20px 0;
-            object-fit: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-weight: bold;
-        }
-
-        /* Serviços Gerais */
-        .servico {
-            padding: 60px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .servico:nth-child(even) {
-            background-color: #fafafa;
-        }
-
-        .servico-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .servico-texto ul {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .servico-texto ul li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .servico-texto ul li::before {
-            content: "✓";
-            color: var(--roxo-escuro);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        .placeholder-img {
-            width: 100%;
-            height: 300px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Seção INPI (Destaque) */
-        .inpi {
-            background-color: var(--roxo-escuro);
-            color: var(--branco);
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .inpi h2 {
-            color: var(--rosa-claro);
-        }
-
-        .inpi p {
-            max-width: 700px;
-            margin: 0 auto 20px auto;
-        }
-
-        /* Clientes */
-        .clientes {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .clientes-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 30px;
-            margin-top: 40px;
-        }
-
-        .cliente-card {
-            background: var(--rosa-claro);
-            padding: 20px;
-            border-radius: 10px;
-            width: 200px;
-        }
-
-        .cliente-card h4 {
-            color: var(--roxo-escuro);
-            margin-bottom: 5px;
-        }
-
-        /* Oferta / CTA */
-        .oferta {
-            background-color: var(--preto);
-            color: var(--branco);
             text-align: center;
-            padding: 80px 0;
+            align-items: end;
+        }
+        .client-item img {
+            max-height: 90px; 
+            margin: 0 auto 10px auto;
+            object-fit: contain;
         }
 
-        .oferta h2 {
-            color: var(--branco);
+        /* SEÇÃO DE OFERTA (CORRIGIDA - ESTILO LIMPO) */
+        .offer-section {
+            text-align: center;
+            background-color: var(--cor-branco);
+            padding: 80px 20px;
         }
-
-        .oferta-box {
-            border: 2px solid var(--rosa-claro);
-            padding: 40px;
-            display: inline-block;
+        .offer-title {
+            font-size: 2.5rem;
+            color: var(--cor-roxo-escuro);
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .offer-list {
+            list-style: none;
+            font-size: 1.2rem;
             margin-top: 20px;
-            border-radius: 10px;
+            color: var(--cor-texto);
+        }
+        .offer-list li { margin-bottom: 10px; }
+
+        /* RODAPÉ (CORRIGIDO PARA BRANCO) */
+        footer { 
+            background: var(--cor-branco); /* Fundo branco conforme PDF */
+            color: var(--cor-texto); 
+            text-align: center; 
+            padding: 60px 20px; 
+            border-top: 1px solid #eee;
         }
 
-        /* Contato */
-        footer {
-            background-color: var(--branco);
-            padding: 50px 0;
+        /* BOTÃO FLUTUANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--cor-whats);
+            color: #FFF;
+            border-radius: 50px;
             text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-icon { width: 35px; height: 35px; fill: white; }
 
-        .whatsapp-link {
-            font-size: 1.5rem;
-            color: var(--roxo-escuro);
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        /* Responsividade Mobile */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .sobre-grid, .servico-grid { grid-template-columns: 1fr; }
-            .sobre-img { height: 300px; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <a href="https://wa.me/5542998621712" class="whatsapp-float" target="_blank" title="Chamar no WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487 2.721 1.173 2.721.782 3.216.732.495-.05 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <header class="hero">
         <div class="container">
-            <p>ASSESSORIA MARKETING</p>
-            <h1>Bianca Isabely</h1>
+            <h3 style="font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">Assessoria Marketing</h3>
+            <h1 style="font-size: 2.8rem;">Bianca Isabely</h1>
             <p>Estratégia, Rebranding e Gestão Comercial</p>
-            <a href="#contato" class="btn">Falar com Bianca</a>
+
+            <img src="sua-foto-perfil.jpg" alt="Foto Bianca" class="hero-img">
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Sobre Mim</h2>
+                <p>Me chamo Bianca, tenho 23 anos e ofereço uma assessoria <strong>360°</strong>. Diferente de designers que apenas entregam uma imagem e somem, eu cuido da saúde visual e organizacional do seu negócio.</p>
+                <p>Eu "arrumo a casa" para que sua empresa transmita profissionalismo em cada detalhe.</p>
+            </div>
         </div>
     </header>
 
-    <section class="sobre">
-        <div class="container sobre-grid">
-            <div class="sobre-img">
-                <img src="https://placehold.co/500x500/FCE4EC/4A0E4E?text=Foto+Bianca" alt="Foto Bianca Isabely" style="width:100%; height:100%; object-fit:cover; border-radius:20px;">
+    <section>
+        <div class="container grid-2">
+            <div>
+                <img src="slide-3-branding.jpg" alt="Conceito Branding">
             </div>
             <div>
-                <h2>Marketing que organiza e vende.</h2>
-                <p>Me chamo Bianca, tenho 23 anos e ofereço uma assessoria 360°. Diferente de designers que apenas entregam uma imagem e somem, eu cuido da saúde visual e organizacional do seu negócio.</p>
-                <br>
-                <p>Meu trabalho envolve desde a modernização da sua marca antiga até encontrar a gráfica mais barata para seus uniformes. Eu "arrumo a casa" para que sua empresa transmita profissionalismo em cada detalhe.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="servico">
-        <div class="container servico-grid">
-            <div class="servico-texto">
                 <h2>1. Branding: Conceito & Estratégia</h2>
-                <h3>Por que sua marca existe?</h3>
-                <p>Antes de desenhar, nós pensamos. O Manual de Marca começa explicando o Conceito por trás do símbolo.</p>
-                <ul>
-                    <li><strong>Significado da Logo:</strong> Por que escolhemos este símbolo? O que ele representa na mente do seu cliente?</li>
-                    <li><strong>Psicologia das Cores:</strong> Explicamos como as cores influenciam a decisão de compra.</li>
-                    <li><strong>Tom de Voz:</strong> Como sua marca "fala"? É séria, divertida ou técnica?</li>
+                <p>Antes de desenhar, nós pensamos.</p>
+                <ul class="card-list">
+                    <li><strong>Significado da Logo:</strong> O que ela representa na mente do cliente?</li>
+                    <li><strong>Psicologia das Cores:</strong> Por que azul e não vermelho?</li>
+                    <li><strong>Tom de Voz:</strong> Como sua marca "fala"?</li>
                 </ul>
-                <p><em>*Uma marca com significado vende mais.*</em></p>
-            </div>
-            <div class="placeholder-img">
-                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Branding+Conceito" style="max-width:100%;">
             </div>
         </div>
     </section>
 
-    <section class="servico">
-        <div class="container servico-grid">
-            <div class="placeholder-img">
-                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Itens+Tecnicos" style="max-width:100%;">
-            </div>
-            <div class="servico-texto">
+    <section class="bg-light">
+        <div class="container grid-2">
+            <div>
                 <h2>2. Branding: Itens Técnicos</h2>
-                <p>A parte prática que garante que sua marca seja respeitada em qualquer lugar.</p>
-                <ul>
-                    <li><strong>Rebranding & Vetorização:</strong> Logo em vetor (PDF/EPS) para outdoors gigantes sem perder qualidade.</li>
-                    <li><strong>Códigos de Cor (CMYK vs RGB):</strong> O código exato para a gráfica imprimir sem erro.</li>
-                    <li><strong>Mockups:</strong> Visualização em Uniformes, Carros e Fachadas antes de produzir.</li>
-                    <li><strong>Tipografia:</strong> As fontes oficiais da sua empresa.</li>
+                <p>A parte prática que garante que sua marca seja respeitada.</p>
+                <ul class="card-list">
+                    <li><strong>Rebranding & Vetorização:</strong> Logo em vetor (PDF).</li>
+                    <li><strong>Códigos de Cor (CMYK):</strong> Para a gráfica imprimir sem erro.</li>
+                    <li><strong>Mockups:</strong> Visualização em uniformes e fachadas.</li>
+                    <li><strong>Tipografia:</strong> Fontes oficiais da empresa.</li>
                 </ul>
             </div>
+            <div>
+                <img src="slide-4-tecnico.jpg" alt="Itens Técnicos">
+            </div>
         </div>
     </section>
 
-    <section class="inpi">
-        <div class="container">
-            <h2>Registro de Marca (INPI)</h2>
-            <h3>Protegendo seu Patrimônio.</h3>
-            <p>Investir em fachada e marketing sem ter o registro é construir casa em terreno alugado. Se não registrou no INPI, você corre risco.</p>
-            <p><strong>O risco real:</strong> Se um concorrente registrar antes, você pode ser processado e obrigado a mudar de nome.</p>
-            <p>Eu cuido da análise de viabilidade e acompanho o processo.</p>
+    <section>
+        <div class="container grid-2">
+            <div>
+                <img src="slide-5-inpi.jpg" alt="INPI">
+            </div>
+            <div>
+                <h2>Registro de Marca (INPI)</h2>
+                <h3>Protegendo seu Patrimônio.</h3>
+                <p>Se não registrou no INPI, você corre risco. Se um concorrente registrar antes, você pode perder toda a clientela.</p>
+                <p><strong>Eu cuido da análise de viabilidade e acompanho o processo.</strong></p>
+            </div>
         </div>
     </section>
 
-    <section class="servico">
-        <div class="container servico-grid">
-            <div class="servico-texto">
-                <h2>Design Gráfico & Assessoria Offline</h2>
-                <h3>Do Digital ao Mundo Real</h3>
-                <p>Eu não apenas crio a arte; ofereço Assessoria de Produção para encontrar os melhores fornecedores (gráficas) com o menor custo.</p>
+    <section class="bg-light">
+        <div class="container grid-2">
+            <div>
+                <h2>Design Gráfico & Offline</h2>
+                <p>Assessoria de Produção para encontrar os melhores fornecedores com menor custo.</p>
                 <ul>
-                    <li>Cartões de Visita</li>
-                    <li>Panfletos e Folders</li>
-                    <li>Fachadas de Loja</li>
-                    <li>Banners e Faixas</li>
-                    <li>Adesivos para Frota</li>
-                    <li>Uniformes</li>
+                    <li>✓ Cartões de Visita</li>
+                    <li>✓ Panfletos e Folders</li>
+                    <li>✓ Fachadas de Loja</li>
+                    <li>✓ Uniformes e Adesivos</li>
                 </ul>
             </div>
-            <div class="placeholder-img">
-                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Design+Grafico" style="max-width:100%;">
+            <div>
+                <img src="slide-6-offline.jpg" alt="Design Offline">
             </div>
         </div>
     </section>
 
-    <section class="servico">
-        <div class="container servico-grid">
-            <div class="placeholder-img">
-                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Edicao+Video" style="max-width:100%;">
+    <section>
+        <div class="container grid-2">
+            <div style="display:flex; justify-content:center;">
+                <img src="slide-7-celular.jpg" alt="Edição Celular" style="max-width: 280px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-radius: 20px;">
             </div>
-            <div class="servico-texto">
+            <div>
                 <h2>Filmmaker & Edição</h2>
-                <p>Vídeos conectam e vendem muito mais. Ofereço o serviço completo:</p>
-                <ul>
-                    <li><strong>1. Captação (Gravação):</strong> Vou até sua empresa dirigir e gravar produtos e bastidores.</li>
-                    <li><strong>2. Edição Viral:</strong> Focada em retenção para Reels e TikTok. Cortes rápidos, legendas dinâmicas e músicas em alta.</li>
+                <p>Vídeos conectam e vendem muito mais.</p>
+                <br>
+                <h3>1. Captação (Gravação)</h3>
+                <p>Vou até sua empresa para dirigir e gravar cenas dos produtos.</p>
+                <br>
+                <h3>2. Edição Viral</h3>
+                <p>Edição focada em retenção (Reels/TikTok). Cortes rápidos e músicas em alta.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container">
+            <h2 style="text-align: center;">Gestão de Redes (Sprints)</h2>
+            <div class="grid-2" style="margin-top: 30px;">
+                <ul class="card-list">
+                    <li><strong>1. Planejamento:</strong> Definição do tema.</li>
+                    <li><strong>2. Produção:</strong> Criação das artes e vídeos.</li>
+                    <li><strong>3. Aprovação:</strong> Você valida tudo.</li>
+                    <li><strong>4. Postagem:</strong> Agendamento automático.</li>
                 </ul>
+                <div style="text-align: center;">
+                    <h3>Resultado:</h3>
+                    <p style="font-size: 1.2rem; font-weight: bold;">Organização total e zero estresse.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="servico">
-        <div class="container servico-grid">
-            <div class="servico-texto">
-                <h2>Gestão de Redes (Sprints)</h2>
-                <p>Metodologia de Sprints para Instagram, TikTok, Facebook e LinkedIn:</p>
-                <ol style="margin-left: 20px; margin-top: 15px;">
-                    <li><strong>Planejamento:</strong> Definição do tema da semana.</li>
-                    <li><strong>Produção:</strong> Criação das artes e edição de vídeos.</li>
-                    <li><strong>Aprovação:</strong> Você valida tudo antes de ir ao ar.</li>
-                    <li><strong>Postagem:</strong> Agendamento automático.</li>
-                </ol>
-                <p style="margin-top: 15px;"><strong>Resultado:</strong> Organização total e zero estresse para você.</p>
+    <section>
+        <div class="container grid-2">
+            <div>
+                <img src="slide-9-organizacao.jpg" alt="Organização">
             </div>
-            <div class="placeholder-img">
-                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Gestao+Redes" style="max-width:100%;">
-            </div>
-        </div>
-    </section>
-
-     <section class="servico">
-        <div class="container servico-grid">
-            <div class="placeholder-img">
-                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Organizacao" style="max-width:100%;">
-            </div>
-            <div class="servico-texto">
-                <h2>Portfólio Empresarial (Organização)</h2>
+            <div>
+                <h2>Portfólio Empresarial</h2>
                 <h3>Centralização de Arquivos</h3>
-                <p>Um dos maiores problemas das empresas é a perda de ativos digitais. Eu resolvo isso criando uma pasta centralizada:</p>
+                <p>Crio uma pasta centralizada contendo:</p>
                 <ul>
-                    <li><strong>Pasta de Marca:</strong> Variações de Logo e Manual.</li>
-                    <li><strong>Pasta de Marketing:</strong> Histórico de artes e vídeos.</li>
-                    <li><strong>Acessos:</strong> Documento seguro com logins e senhas.</li>
+                    <li>☑ Pasta de Marca (Logos e Manual)</li>
+                    <li>☑ Histórico de Artes e Vídeos</li>
+                    <li>☑ Documento de Senhas e Acessos</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="servico">
-        <div class="container servico-grid">
-            <div class="servico-texto">
+    <section class="bg-light">
+        <div class="container grid-2">
+            <div>
                 <h2>Tráfego Pago (Ads)</h2>
                 <h3>Acelerando Resultados</h3>
-                <p>Gestão estratégica de anúncios no Instagram, Facebook, TikTok e Google.</p>
-                <div style="background: #f4f4f4; padding: 15px; border-left: 4px solid var(--roxo-escuro); margin-top: 20px;">
-                    <strong>Case Real: Varejo</strong><br>
-                    Investimento: ~R$ 3.000 / mês<br>
-                    Retorno (Loja Física): ~R$ 14.000 / mês
+                <p>Gestão estratégica no Instagram, Facebook e Google.</p>
+                <div style="background:#fff; padding:20px; border-radius:8px; border:1px solid #ccc;">
+                    <h4>Case Real: Varejo</h4>
+                    <p>Investimento: ~R$ 3.000 / mês</p>
+                    <p style="color:green; font-weight:bold;">Retorno: ~R$ 14.000 / mês</p>
                 </div>
-                <p style="margin-top: 10px;"><em>*Foco total em ROI (Retorno sobre Investimento).*</em></p>
             </div>
-            <div class="placeholder-img">
-                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Trafego+Pago" style="max-width:100%;">
-            </div>
-        </div>
-    </section>
-
-    <section class="clientes">
-        <div class="container">
-            <h2>Clientes & Experiência</h2>
-            <div class="clientes-grid">
-                <div class="cliente-card">
-                    <h4>Lions Startups</h4>
-                    <p>Foco empresarial e conexões B2B.</p>
-                </div>
-                <div class="cliente-card">
-                    <h4>Lions Dev</h4>
-                    <p>Captação de alunos para cursos tech.</p>
-                </div>
-                <div class="cliente-card">
-                    <h4>SOS - Obras Sociais</h4>
-                    <p>Divulgação de cursos e ações sociais.</p>
-                </div>
-                <div class="cliente-card">
-                    <h4>Sauvvitech</h4>
-                    <p>Health Tech em ascensão no mercado.</p>
-                </div>
-                <div class="cliente-card">
-                    <h4>Atacadão da Paz</h4>
-                    <p>Varejo/Atacado de Limpeza.</p>
-                </div>
+            <div>
+                <img src="slide-10-ads.jpg" alt="Tráfego Pago">
             </div>
         </div>
     </section>
 
-    <section class="oferta">
+    <section>
         <div class="container">
-            <h2>Você precisa ver para crer.</h2>
+            <h2 style="text-align: center; margin-bottom: 40px;">Clientes & Experiência</h2>
+            <div class="clients-grid">
+                <div class="client-item">
+                    <img src="logo-lions-startups.png" alt="Logo Lions Startups">
+                    <h3>Lions Startups</h3>
+                    <p style="font-size: 0.9rem;">Foco empresarial e conexões B2B.</p>
+                </div>
+                <div class="client-item">
+                    <img src="logo-lions-dev.png" alt="Logo Lions Dev">
+                    <h3>Lions Dev</h3>
+                    <p style="font-size: 0.9rem;">Captação de alunos.</p>
+                </div>
+                <div class="client-item">
+                    <img src="logo-sos.png" alt="Logo SOS">
+                    <h3>SOS - Obras Sociais</h3>
+                    <p style="font-size: 0.9rem;">Ações sociais.</p>
+                </div>
+                <div class="client-item">
+                    <img src="logo-sauvvitech.png" alt="Logo Sauvvitech">
+                    <h3>Sauvvitech</h3>
+                    <p style="font-size: 0.9rem;">Health Tech.</p>
+                </div>
+                <div class="client-item">
+                    <img src="logo-atacadao.png" alt="Logo Atacadão da Paz">
+                    <h3>Atacadão da Paz</h3>
+                    <p style="font-size: 0.9rem;">Varejo/Atacado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta" class="offer-section">
+        <div class="container">
+            <h3 style="font-weight: 700; color: var(--cor-roxo-escuro); font-size: 1.5rem; margin-bottom: 10px;">Você precisa ver para crer.</h3>
             <p>Por isso, eliminei o risco. Teste antes de contratar.</p>
             
-            <div class="oferta-box">
-                <h3>1 Semana de Teste Gratuito</h3>
-                <p>Uma degustação completa da minha entrega de marketing.</p>
-                <p>✓ Planejamento</p>
-                <p>✓ Criação de Artes</p>
-                <p>✓ Sem Fidelidade</p>
-                <a href="https://wa.me/5542998621712" class="btn">Quero meu Teste Grátis</a>
+            <div style="margin-top: 40px;">
+                <h2 class="offer-title">1 Semana de Teste Gratuito</h2>
+                <p style="font-size: 1.1rem; color: #555;">Uma degustação completa da minha entrega de marketing.</p>
+                
+                <ul class="offer-list">
+                    <li>✓ Planejamento</li>
+                    <li>✓ Criação de Artes</li>
+                    <li>✓ Sem Fidelidade</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <footer id="contato">
         <div class="container">
-            <h2>Vamos organizar sua marca?</h2>
+            <img src="qr-code-whatsapp.jpg" alt="QR Code" style="width: 300px; margin: 0 auto 30px auto; border: 1px solid #ddd;">
+            
+            <h2 style="margin-bottom: 10px;">Vamos organizar sua marca?</h2>
             <p>Entre em contato pelo WhatsApp e vamos estruturar o crescimento da sua empresa.</p>
-            <br>
-            <img src="https://placehold.co/150x150/FCE4EC/4A0E4E?text=QR+Code" alt="QR Code WhatsApp" style="margin-bottom: 20px;">
-            <br>
-            <h3>Bianca Isabely</h3>
-            <a href="https://wa.me/5542998621712" class="whatsapp-link">(42) 99862-1712</a>
+            
+            <div style="margin-top: 30px;">
+                <h3 style="font-size: 1.8rem;">Bianca Isabely</h3>
+                <p style="font-size: 1.5rem; color: var(--cor-texto);">(42) 99862-1712</p>
+            </div>
         </div>
     </footer>
 
