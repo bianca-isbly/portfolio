@@ -7,11 +7,11 @@
     <style>
         /* --- CONFIGURAÇÕES GERAIS --- */
         :root {
-            --cor-roxo-escuro: #4B0082; /* Identidade Visual */
+            --cor-roxo-escuro: #4B0082;
             --cor-rosa-claro: #F3E5F5;
             --cor-branco: #ffffff;
             --cor-texto: #333333;
-            --cor-whats: #25D366; /* Verde WhatsApp */
+            --cor-whats: #25D366;
             --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -81,7 +81,7 @@
             object-fit: contain;
         }
 
-        /* SEÇÃO DE OFERTA (CORRIGIDA - ESTILO LIMPO) */
+        /* OFERTA (TICKET LIMPO) */
         .offer-section {
             text-align: center;
             background-color: var(--cor-branco);
@@ -101,10 +101,25 @@
             color: var(--cor-texto);
         }
         .offer-list li { margin-bottom: 10px; }
+        
+        /* BOTÃO AÇÃO */
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--cor-roxo-escuro);
+            color: var(--cor-branco);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .btn-cta:hover { transform: scale(1.05); }
 
-        /* RODAPÉ (CORRIGIDO PARA BRANCO) */
+        /* RODAPÉ BRANCO */
         footer { 
-            background: var(--cor-branco); /* Fundo branco conforme PDF */
+            background: var(--cor-branco); 
             color: var(--cor-texto); 
             text-align: center; 
             padding: 60px 20px; 
@@ -135,7 +150,6 @@
 
         @media (max-width: 768px) {
             .grid-2 { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -151,7 +165,7 @@
             <h1 style="font-size: 2.8rem;">Bianca Isabely</h1>
             <p>Estratégia, Rebranding e Gestão Comercial</p>
 
-            <img src="sua-foto-perfil.jpg" alt="Foto Bianca" class="hero-img">
+            <img src="bia perfil.png" alt="Foto Bianca" class="hero-img">
 
             <div style="max-width: 800px; margin: 0 auto;">
                 <h2>Sobre Mim</h2>
@@ -164,7 +178,7 @@
     <section>
         <div class="container grid-2">
             <div>
-                <img src="slide-3-branding.jpg" alt="Conceito Branding">
+                <img src="1ª Brandig.JPG" alt="Conceito Branding">
             </div>
             <div>
                 <h2>1. Branding: Conceito & Estratégia</h2>
@@ -191,7 +205,7 @@
                 </ul>
             </div>
             <div>
-                <img src="slide-4-tecnico.jpg" alt="Itens Técnicos">
+                <img src="itens tecnicos.png" alt="Itens Técnicos">
             </div>
         </div>
     </section>
@@ -199,7 +213,7 @@
     <section>
         <div class="container grid-2">
             <div>
-                <img src="slide-5-inpi.jpg" alt="INPI">
+                <img src="inpi.png" alt="INPI">
             </div>
             <div>
                 <h2>Registro de Marca (INPI)</h2>
@@ -223,7 +237,7 @@
                 </ul>
             </div>
             <div>
-                <img src="slide-6-offline.jpg" alt="Design Offline">
+                <img src="mkt fisico.png" alt="Design Offline">
             </div>
         </div>
     </section>
@@ -231,7 +245,7 @@
     <section>
         <div class="container grid-2">
             <div style="display:flex; justify-content:center;">
-                <img src="slide-7-celular.jpg" alt="Edição Celular" style="max-width: 280px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-radius: 20px;">
+                <img src="edicaodevideos.png" alt="Edição Celular" style="max-width: 280px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-radius: 20px;">
             </div>
             <div>
                 <h2>Filmmaker & Edição</h2>
@@ -267,7 +281,7 @@
     <section>
         <div class="container grid-2">
             <div>
-                <img src="slide-9-organizacao.jpg" alt="Organização">
+                <img src="organizacao.png" alt="Organização">
             </div>
             <div>
                 <h2>Portfólio Empresarial</h2>
@@ -295,7 +309,7 @@
                 </div>
             </div>
             <div>
-                <img src="slide-10-ads.jpg" alt="Tráfego Pago">
+                <img src="trafegopago.png" alt="Tráfego Pago">
             </div>
         </div>
     </section>
@@ -304,28 +318,33 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 40px;">Clientes & Experiência</h2>
             <div class="clients-grid">
+                
                 <div class="client-item">
-                    <img src="logo-lions-startups.png" alt="Logo Lions Startups">
+                    <img src="logo_lions_startups.png" alt="Logo Lions Startups">
                     <h3>Lions Startups</h3>
                     <p style="font-size: 0.9rem;">Foco empresarial e conexões B2B.</p>
                 </div>
+
                 <div class="client-item">
-                    <img src="logo-lions-dev.png" alt="Logo Lions Dev">
+                     <img src="logo_lions_dev.png" alt="Logo Lions Dev">
                     <h3>Lions Dev</h3>
                     <p style="font-size: 0.9rem;">Captação de alunos.</p>
                 </div>
+
                 <div class="client-item">
-                    <img src="logo-sos.png" alt="Logo SOS">
+                    <img src="sos pg.png" alt="Logo SOS">
                     <h3>SOS - Obras Sociais</h3>
                     <p style="font-size: 0.9rem;">Ações sociais.</p>
                 </div>
+
                 <div class="client-item">
-                    <img src="logo-sauvvitech.png" alt="Logo Sauvvitech">
+                    <img src="Logo _ Sauvvi Tech.png" alt="Logo Sauvvitech">
                     <h3>Sauvvitech</h3>
                     <p style="font-size: 0.9rem;">Health Tech.</p>
                 </div>
+
                 <div class="client-item">
-                    <img src="logo-atacadao.png" alt="Logo Atacadão da Paz">
+                    <img src="Logo_atacadao.png" alt="Logo Atacadão da Paz">
                     <h3>Atacadão da Paz</h3>
                     <p style="font-size: 0.9rem;">Varejo/Atacado.</p>
                 </div>
@@ -347,13 +366,15 @@
                     <li>✓ Criação de Artes</li>
                     <li>✓ Sem Fidelidade</li>
                 </ul>
+                
+                <a href="https://wa.me/5542998621712" class="btn-cta">Quero meu Teste</a>
             </div>
         </div>
     </section>
 
     <footer id="contato">
         <div class="container">
-            <img src="qr-code-whatsapp.jpg" alt="QR Code" style="width: 300px; margin: 0 auto 30px auto; border: 1px solid #ddd;">
+            <img src="qr code whats.png" alt="QR Code" style="width: 300px; margin: 0 auto 30px auto; border: 1px solid #ddd;">
             
             <h2 style="margin-bottom: 10px;">Vamos organizar sua marca?</h2>
             <p>Entre em contato pelo WhatsApp e vamos estruturar o crescimento da sua empresa.</p>
