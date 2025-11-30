@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bianca Isabely - Assessoria de Marketing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --roxo-escuro: #4A0E4E; /* Ajustado para um roxo elegante */
+            --rosa-claro: #FCE4EC;
+            --preto: #000000;
+            --branco: #FFFFFF;
+            --cinza-texto: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--cinza-texto);
+            background-color: var(--branco);
+        }
+
+        /* Utilitários */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--roxo-escuro);
+            color: var(--branco);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #6A1B9A;
+            transform: translateY(-3px);
+        }
+
+        h2 {
+            color: var(--roxo-escuro);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--preto);
+            margin-bottom: 10px;
+        }
+
+        /* Hero Section (Capa) */
+        header {
+            background-color: var(--branco);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: linear-gradient(to bottom right, #fff, var(--rosa-claro));
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: var(--preto);
+            line-height: 1.2;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: var(--roxo-escuro);
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* Sobre Mim */
+        .sobre {
+            padding: 80px 0;
+            background-color: var(--branco);
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sobre-img {
+            width: 100%;
+            height: 400px;
+            background-color: #ddd; /* Placeholder */
+            border-radius: 20px 0 20px 0;
+            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
+
+        /* Serviços Gerais */
+        .servico {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .servico:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .servico-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .servico-texto ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .servico-texto ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .servico-texto ul li::before {
+            content: "✓";
+            color: var(--roxo-escuro);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .placeholder-img {
+            width: 100%;
+            height: 300px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Seção INPI (Destaque) */
+        .inpi {
+            background-color: var(--roxo-escuro);
+            color: var(--branco);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .inpi h2 {
+            color: var(--rosa-claro);
+        }
+
+        .inpi p {
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+        }
+
+        /* Clientes */
+        .clientes {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .clientes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .cliente-card {
+            background: var(--rosa-claro);
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .cliente-card h4 {
+            color: var(--roxo-escuro);
+            margin-bottom: 5px;
+        }
+
+        /* Oferta / CTA */
+        .oferta {
+            background-color: var(--preto);
+            color: var(--branco);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .oferta h2 {
+            color: var(--branco);
+        }
+
+        .oferta-box {
+            border: 2px solid var(--rosa-claro);
+            padding: 40px;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        /* Contato */
+        footer {
+            background-color: var(--branco);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .whatsapp-link {
+            font-size: 1.5rem;
+            color: var(--roxo-escuro);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Responsividade Mobile */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .sobre-grid, .servico-grid { grid-template-columns: 1fr; }
+            .sobre-img { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <p>ASSESSORIA MARKETING</p>
+            <h1>Bianca Isabely</h1>
+            <p>Estratégia, Rebranding e Gestão Comercial</p>
+            <a href="#contato" class="btn">Falar com Bianca</a>
+        </div>
+    </header>
+
+    <section class="sobre">
+        <div class="container sobre-grid">
+            <div class="sobre-img">
+                <img src="https://placehold.co/500x500/FCE4EC/4A0E4E?text=Foto+Bianca" alt="Foto Bianca Isabely" style="width:100%; height:100%; object-fit:cover; border-radius:20px;">
+            </div>
+            <div>
+                <h2>Marketing que organiza e vende.</h2>
+                <p>Me chamo Bianca, tenho 23 anos e ofereço uma assessoria 360°. Diferente de designers que apenas entregam uma imagem e somem, eu cuido da saúde visual e organizacional do seu negócio.</p>
+                <br>
+                <p>Meu trabalho envolve desde a modernização da sua marca antiga até encontrar a gráfica mais barata para seus uniformes. Eu "arrumo a casa" para que sua empresa transmita profissionalismo em cada detalhe.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="servico">
+        <div class="container servico-grid">
+            <div class="servico-texto">
+                <h2>1. Branding: Conceito & Estratégia</h2>
+                <h3>Por que sua marca existe?</h3>
+                <p>Antes de desenhar, nós pensamos. O Manual de Marca começa explicando o Conceito por trás do símbolo.</p>
+                <ul>
+                    <li><strong>Significado da Logo:</strong> Por que escolhemos este símbolo? O que ele representa na mente do seu cliente?</li>
+                    <li><strong>Psicologia das Cores:</strong> Explicamos como as cores influenciam a decisão de compra.</li>
+                    <li><strong>Tom de Voz:</strong> Como sua marca "fala"? É séria, divertida ou técnica?</li>
+                </ul>
+                <p><em>*Uma marca com significado vende mais.*</em></p>
+            </div>
+            <div class="placeholder-img">
+                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Branding+Conceito" style="max-width:100%;">
+            </div>
+        </div>
+    </section>
+
+    <section class="servico">
+        <div class="container servico-grid">
+            <div class="placeholder-img">
+                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Itens+Tecnicos" style="max-width:100%;">
+            </div>
+            <div class="servico-texto">
+                <h2>2. Branding: Itens Técnicos</h2>
+                <p>A parte prática que garante que sua marca seja respeitada em qualquer lugar.</p>
+                <ul>
+                    <li><strong>Rebranding & Vetorização:</strong> Logo em vetor (PDF/EPS) para outdoors gigantes sem perder qualidade.</li>
+                    <li><strong>Códigos de Cor (CMYK vs RGB):</strong> O código exato para a gráfica imprimir sem erro.</li>
+                    <li><strong>Mockups:</strong> Visualização em Uniformes, Carros e Fachadas antes de produzir.</li>
+                    <li><strong>Tipografia:</strong> As fontes oficiais da sua empresa.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="inpi">
+        <div class="container">
+            <h2>Registro de Marca (INPI)</h2>
+            <h3>Protegendo seu Patrimônio.</h3>
+            <p>Investir em fachada e marketing sem ter o registro é construir casa em terreno alugado. Se não registrou no INPI, você corre risco.</p>
+            <p><strong>O risco real:</strong> Se um concorrente registrar antes, você pode ser processado e obrigado a mudar de nome.</p>
+            <p>Eu cuido da análise de viabilidade e acompanho o processo.</p>
+        </div>
+    </section>
+
+    <section class="servico">
+        <div class="container servico-grid">
+            <div class="servico-texto">
+                <h2>Design Gráfico & Assessoria Offline</h2>
+                <h3>Do Digital ao Mundo Real</h3>
+                <p>Eu não apenas crio a arte; ofereço Assessoria de Produção para encontrar os melhores fornecedores (gráficas) com o menor custo.</p>
+                <ul>
+                    <li>Cartões de Visita</li>
+                    <li>Panfletos e Folders</li>
+                    <li>Fachadas de Loja</li>
+                    <li>Banners e Faixas</li>
+                    <li>Adesivos para Frota</li>
+                    <li>Uniformes</li>
+                </ul>
+            </div>
+            <div class="placeholder-img">
+                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Design+Grafico" style="max-width:100%;">
+            </div>
+        </div>
+    </section>
+
+    <section class="servico">
+        <div class="container servico-grid">
+            <div class="placeholder-img">
+                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Edicao+Video" style="max-width:100%;">
+            </div>
+            <div class="servico-texto">
+                <h2>Filmmaker & Edição</h2>
+                <p>Vídeos conectam e vendem muito mais. Ofereço o serviço completo:</p>
+                <ul>
+                    <li><strong>1. Captação (Gravação):</strong> Vou até sua empresa dirigir e gravar produtos e bastidores.</li>
+                    <li><strong>2. Edição Viral:</strong> Focada em retenção para Reels e TikTok. Cortes rápidos, legendas dinâmicas e músicas em alta.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="servico">
+        <div class="container servico-grid">
+            <div class="servico-texto">
+                <h2>Gestão de Redes (Sprints)</h2>
+                <p>Metodologia de Sprints para Instagram, TikTok, Facebook e LinkedIn:</p>
+                <ol style="margin-left: 20px; margin-top: 15px;">
+                    <li><strong>Planejamento:</strong> Definição do tema da semana.</li>
+                    <li><strong>Produção:</strong> Criação das artes e edição de vídeos.</li>
+                    <li><strong>Aprovação:</strong> Você valida tudo antes de ir ao ar.</li>
+                    <li><strong>Postagem:</strong> Agendamento automático.</li>
+                </ol>
+                <p style="margin-top: 15px;"><strong>Resultado:</strong> Organização total e zero estresse para você.</p>
+            </div>
+            <div class="placeholder-img">
+                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Gestao+Redes" style="max-width:100%;">
+            </div>
+        </div>
+    </section>
+
+     <section class="servico">
+        <div class="container servico-grid">
+            <div class="placeholder-img">
+                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Organizacao" style="max-width:100%;">
+            </div>
+            <div class="servico-texto">
+                <h2>Portfólio Empresarial (Organização)</h2>
+                <h3>Centralização de Arquivos</h3>
+                <p>Um dos maiores problemas das empresas é a perda de ativos digitais. Eu resolvo isso criando uma pasta centralizada:</p>
+                <ul>
+                    <li><strong>Pasta de Marca:</strong> Variações de Logo e Manual.</li>
+                    <li><strong>Pasta de Marketing:</strong> Histórico de artes e vídeos.</li>
+                    <li><strong>Acessos:</strong> Documento seguro com logins e senhas.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="servico">
+        <div class="container servico-grid">
+            <div class="servico-texto">
+                <h2>Tráfego Pago (Ads)</h2>
+                <h3>Acelerando Resultados</h3>
+                <p>Gestão estratégica de anúncios no Instagram, Facebook, TikTok e Google.</p>
+                <div style="background: #f4f4f4; padding: 15px; border-left: 4px solid var(--roxo-escuro); margin-top: 20px;">
+                    <strong>Case Real: Varejo</strong><br>
+                    Investimento: ~R$ 3.000 / mês<br>
+                    Retorno (Loja Física): ~R$ 14.000 / mês
+                </div>
+                <p style="margin-top: 10px;"><em>*Foco total em ROI (Retorno sobre Investimento).*</em></p>
+            </div>
+            <div class="placeholder-img">
+                <img src="https://placehold.co/600x400/eee/333?text=Imagem+Trafego+Pago" style="max-width:100%;">
+            </div>
+        </div>
+    </section>
+
+    <section class="clientes">
+        <div class="container">
+            <h2>Clientes & Experiência</h2>
+            <div class="clientes-grid">
+                <div class="cliente-card">
+                    <h4>Lions Startups</h4>
+                    <p>Foco empresarial e conexões B2B.</p>
+                </div>
+                <div class="cliente-card">
+                    <h4>Lions Dev</h4>
+                    <p>Captação de alunos para cursos tech.</p>
+                </div>
+                <div class="cliente-card">
+                    <h4>SOS - Obras Sociais</h4>
+                    <p>Divulgação de cursos e ações sociais.</p>
+                </div>
+                <div class="cliente-card">
+                    <h4>Sauvvitech</h4>
+                    <p>Health Tech em ascensão no mercado.</p>
+                </div>
+                <div class="cliente-card">
+                    <h4>Atacadão da Paz</h4>
+                    <p>Varejo/Atacado de Limpeza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="oferta">
+        <div class="container">
+            <h2>Você precisa ver para crer.</h2>
+            <p>Por isso, eliminei o risco. Teste antes de contratar.</p>
+            
+            <div class="oferta-box">
+                <h3>1 Semana de Teste Gratuito</h3>
+                <p>Uma degustação completa da minha entrega de marketing.</p>
+                <p>✓ Planejamento</p>
+                <p>✓ Criação de Artes</p>
+                <p>✓ Sem Fidelidade</p>
+                <a href="https://wa.me/5542998621712" class="btn">Quero meu Teste Grátis</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <h2>Vamos organizar sua marca?</h2>
+            <p>Entre em contato pelo WhatsApp e vamos estruturar o crescimento da sua empresa.</p>
+            <br>
+            <img src="https://placehold.co/150x150/FCE4EC/4A0E4E?text=QR+Code" alt="QR Code WhatsApp" style="margin-bottom: 20px;">
+            <br>
+            <h3>Bianca Isabely</h3>
+            <a href="https://wa.me/5542998621712" class="whatsapp-link">(42) 99862-1712</a>
+        </div>
+    </footer>
+
+</body>
+</html>
