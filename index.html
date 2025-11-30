@@ -221,6 +221,15 @@
             .destaque-oferta { font-size: 2rem; }
             .sprints-container { flex-direction: column; }
         }
+        /*esquerda só no celular */
+        @media (max-width: 768px) {
+            p, h1, h2, h3, li {
+                text-align: left !important;
+            }
+            .container {
+                padding: 20px 25px; /* Um pouco mais de margem nas bordas */
+            }
+        }
     </style>
 </head>
 <body>
@@ -493,5 +502,6 @@
 
 </body>
 </html>
+
 
 
