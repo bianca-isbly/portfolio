@@ -24,8 +24,9 @@
             background-color: var(--cor-branco);
         }
 
-        h1, h2, h3 { color: var(--cor-roxo-escuro); font-weight: 700; margin-bottom: 0.5rem; }
-        p { margin-bottom: 1rem; }
+        h1, h2, h3 { color: var(--cor-roxo-escuro); font-weight: 700; margin-bottom: 0.8rem; }
+        h4 { color: var(--cor-texto); font-weight: 600; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; text-align: justify; }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
@@ -38,31 +39,31 @@
         }
 
         /* SEÇÕES */
-        section { padding: 50px 0; }
-        .bg-light { background-color: var(--cor-rosa-claro); }
+        section { padding: 60px 0; border-bottom: 1px solid #f0f0f0; }
+        .bg-light { background-color: var(--cor-rosa-claro); border-bottom: none; }
         
         .grid-2 { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 40px; 
+            gap: 50px; 
             align-items: center; 
         }
 
         /* CAPA / HERO */
-        .hero { text-align: center; padding: 60px 20px; }
+        .hero { text-align: center; padding: 80px 20px; }
         .hero-img { 
             width: 250px; 
             height: 250px; 
             object-fit: cover; 
             border-radius: 50%; 
-            margin: 20px auto; 
-            border: 4px solid var(--cor-roxo-escuro); 
+            margin: 30px auto; 
+            border: 5px solid var(--cor-roxo-escuro); 
         }
 
         /* LISTAS ESTILIZADAS */
         .card-list { list-style: none; }
         .card-list li {
-            background: #fff; padding: 15px; margin-bottom: 10px;
+            background: #fff; padding: 20px; margin-bottom: 15px;
             border-left: 5px solid var(--cor-roxo-escuro);
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
@@ -70,54 +71,54 @@
         /* CLIENTES (LOGOS) */
         .clients-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
             text-align: center;
             align-items: end;
         }
         .client-item img {
-            max-height: 90px; 
-            margin: 0 auto 10px auto;
+            max-height: 80px; 
+            margin: 0 auto 15px auto;
             object-fit: contain;
         }
 
-        /* OFERTA (TICKET LIMPO) */
+        /* OFERTA */
         .offer-section {
             text-align: center;
             background-color: var(--cor-branco);
-            padding: 80px 20px;
+            padding: 100px 20px;
         }
         .offer-title {
             font-size: 2.5rem;
             color: var(--cor-roxo-escuro);
             text-transform: uppercase;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin: 20px 0;
         }
         .offer-list {
             list-style: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-top: 20px;
             color: var(--cor-texto);
         }
-        .offer-list li { margin-bottom: 10px; }
+        .offer-list li { margin-bottom: 15px; }
         
         /* BOTÃO AÇÃO */
         .btn-cta {
             display: inline-block;
             background-color: var(--cor-roxo-escuro);
             color: var(--cor-branco);
-            padding: 15px 30px;
+            padding: 15px 40px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             text-transform: uppercase;
-            margin-top: 20px;
+            margin-top: 30px;
             transition: transform 0.2s;
         }
         .btn-cta:hover { transform: scale(1.05); }
 
-        /* RODAPÉ BRANCO */
+        /* RODAPÉ */
         footer { 
             background: var(--cor-branco); 
             color: var(--cor-texto); 
@@ -149,7 +150,9 @@
         .whatsapp-icon { width: 35px; height: 35px; fill: white; }
 
         @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
+            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
+            .hero h1 { font-size: 2rem; }
+            p { text-align: left; }
         }
     </style>
 </head>
@@ -161,16 +164,19 @@
 
     <header class="hero">
         <div class="container">
-            <h3 style="font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">Assessoria Marketing</h3>
-            <h1 style="font-size: 2.8rem;">Bianca Isabely</h1>
-            <p>Estratégia, Rebranding e Gestão Comercial</p>
+            <h3 style="font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">ASSESSORIA MARKETING</h3>
+            <h1 style="font-size: 3rem;">Bianca Isabely</h1>
+            <p style="font-size: 1.2rem; text-align: center;">Estratégia, Rebranding e Gestão Comercial</p>
 
             <img src="bia perfil.png" alt="Foto Bianca" class="hero-img">
 
             <div style="max-width: 800px; margin: 0 auto;">
                 <h2>Sobre Mim</h2>
+                <h3 style="color: var(--cor-texto); font-weight: 400;">Marketing que organiza e vende.</h3>
                 <p>Me chamo Bianca, tenho 23 anos e ofereço uma assessoria <strong>360°</strong>. Diferente de designers que apenas entregam uma imagem e somem, eu cuido da saúde visual e organizacional do seu negócio.</p>
-                <p>Eu "arrumo a casa" para que sua empresa transmita profissionalismo em cada detalhe.</p>
+                <p>Meu trabalho envolve desde a modernização da sua marca antiga até encontrar a gráfica mais barata para seus uniformes.</p>
+                <p><strong>Eu "arrumo a casa" para que sua empresa transmita profissionalismo em cada detalhe.</strong></p>
+                <a href="#contato" class="btn-cta">Falar com Bianca</a>
             </div>
         </div>
     </header>
@@ -182,12 +188,14 @@
             </div>
             <div>
                 <h2>1. Branding: Conceito & Estratégia</h2>
-                <p>Antes de desenhar, nós pensamos.</p>
+                <h3>Por que sua marca existe?</h3>
+                <p>Antes de desenhar, nós pensamos. O Manual de Marca começa explicando o Conceito por trás do símbolo.</p>
                 <ul class="card-list">
-                    <li><strong>Significado da Logo:</strong> O que ela representa na mente do cliente?</li>
-                    <li><strong>Psicologia das Cores:</strong> Por que azul e não vermelho?</li>
-                    <li><strong>Tom de Voz:</strong> Como sua marca "fala"?</li>
+                    <li><strong>Significado da Logo:</strong> Por que escolhemos este símbolo? O que ele representa na mente do seu cliente?</li>
+                    <li><strong>Psicologia das Cores:</strong> Por que azul e não vermelho? Explicamos como as cores influenciam a decisão de compra do seu público.</li>
+                    <li><strong>Tom de Voz:</strong> Como sua marca "fala"? É séria, divertida ou técnica?</li>
                 </ul>
+                <p><em>*Uma marca com significado vende mais.*</em></p>
             </div>
         </div>
     </section>
@@ -196,12 +204,13 @@
         <div class="container grid-2">
             <div>
                 <h2>2. Branding: Itens Técnicos</h2>
-                <p>A parte prática que garante que sua marca seja respeitada.</p>
+                <h3>A parte prática que garante que sua marca seja respeitada em qualquer lugar.</h3>
+                <p>O que eu entrego no documento técnico:</p>
                 <ul class="card-list">
-                    <li><strong>Rebranding & Vetorização:</strong> Logo em vetor (PDF).</li>
-                    <li><strong>Códigos de Cor (CMYK):</strong> Para a gráfica imprimir sem erro.</li>
-                    <li><strong>Mockups:</strong> Visualização em uniformes e fachadas.</li>
-                    <li><strong>Tipografia:</strong> Fontes oficiais da empresa.</li>
+                    <li><strong>Rebranding & Vetorização:</strong> Entrego sua logo em vetor (PDF/EPS). Pode ampliar para um outdoor gigante que não perde qualidade.</li>
+                    <li><strong>Códigos de Cor (CMYK vs RGB):</strong> O código exato para a gráfica imprimir sem erro de cor.</li>
+                    <li><strong>Mockups (Aplicações):</strong> Mostro como sua marca fica em Uniformes, Carros e Fachadas antes de você gastar com produção.</li>
+                    <li><strong>Tipografia:</strong> As fontes oficiais da sua empresa.</li>
                 </ul>
             </div>
             <div>
@@ -218,8 +227,13 @@
             <div>
                 <h2>Registro de Marca (INPI)</h2>
                 <h3>Protegendo seu Patrimônio.</h3>
-                <p>Se não registrou no INPI, você corre risco. Se um concorrente registrar antes, você pode perder toda a clientela.</p>
-                <p><strong>Eu cuido da análise de viabilidade e acompanho o processo.</strong></p>
+                <p>Investir em fachada e marketing sem ter o registro é construir casa em terreno alugado. <strong>Se não registrou no INPI, você corre risco.</strong></p>
+                <div style="background:#fff; padding:20px; border-left:5px solid red;">
+                    <h4>O risco real:</h4>
+                    <p style="margin:0;">Se um concorrente registrar antes, você pode ser processado e obrigado a mudar de nome, perdendo toda a clientela.</p>
+                </div>
+                <br>
+                <p>Eu cuido da análise de viabilidade e acompanho o processo.</p>
             </div>
         </div>
     </section>
@@ -227,13 +241,17 @@
     <section class="bg-light">
         <div class="container grid-2">
             <div>
-                <h2>Design Gráfico & Offline</h2>
-                <p>Assessoria de Produção para encontrar os melhores fornecedores com menor custo.</p>
-                <ul>
+                <h2>Design Gráfico & Assessoria Offline</h2>
+                <h3>Do Digital ao Mundo Real</h3>
+                <p>Eu não apenas crio a arte; ofereço <strong>Assessoria de Produção</strong> para encontrar os melhores fornecedores (gráficas) com o menor custo.</p>
+                <p>Desenvolvimento de:</p>
+                <ul style="padding-left: 20px;">
                     <li>✓ Cartões de Visita</li>
                     <li>✓ Panfletos e Folders</li>
                     <li>✓ Fachadas de Loja</li>
-                    <li>✓ Uniformes e Adesivos</li>
+                    <li>✓ Banners e Faixas</li>
+                    <li>✓ Adesivos para Frota</li>
+                    <li>✓ Uniformes</li>
                 </ul>
             </div>
             <div>
@@ -245,17 +263,22 @@
     <section>
         <div class="container grid-2">
             <div style="display:flex; justify-content:center;">
-                <img src="edicaodevideos.png" alt="Edição Celular" style="max-width: 280px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-radius: 20px;">
+                <img src="edicaodevideos.png" alt="Edição Celular" style="max-width: 300px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-radius: 20px;">
             </div>
             <div>
                 <h2>Filmmaker & Edição</h2>
-                <p>Vídeos conectam e vendem muito mais.</p>
-                <br>
-                <h3>1. Captação (Gravação)</h3>
-                <p>Vou até sua empresa para dirigir e gravar cenas dos produtos.</p>
-                <br>
-                <h3>2. Edição Viral</h3>
-                <p>Edição focada em retenção (Reels/TikTok). Cortes rápidos e músicas em alta.</p>
+                <h3>Vídeos conectam e vendem muito mais.</h3>
+                <p>Ofereço o serviço completo de produção audiovisual:</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4>1. Captação (Gravação)</h4>
+                    <p>Vou até sua empresa para dirigir e gravar cenas dos produtos, serviços e bastidores com olhar profissional.</p>
+                </div>
+                
+                <div>
+                    <h4>2. Edição Viral</h4>
+                    <p>Edição focada em retenção para Reels e TikTok. Cortes rápidos, legendas dinâmicas, transições e músicas em alta.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -263,16 +286,18 @@
     <section class="bg-light">
         <div class="container">
             <h2 style="text-align: center;">Gestão de Redes (Sprints)</h2>
+            <p style="text-align: center;">Para garantir consistência e qualidade nas redes (Instagram, TikTok, Facebook, LinkedIn), trabalho com a metodologia de Sprints (Ciclos):</p>
+            
             <div class="grid-2" style="margin-top: 30px;">
                 <ul class="card-list">
-                    <li><strong>1. Planejamento:</strong> Definição do tema.</li>
-                    <li><strong>2. Produção:</strong> Criação das artes e vídeos.</li>
-                    <li><strong>3. Aprovação:</strong> Você valida tudo.</li>
+                    <li><strong>1. Planejamento:</strong> Definição do tema da semana.</li>
+                    <li><strong>2. Produção:</strong> Criação das artes e edição de vídeos.</li>
+                    <li><strong>3. Aprovação:</strong> Você valida tudo antes de ir ao ar.</li>
                     <li><strong>4. Postagem:</strong> Agendamento automático.</li>
                 </ul>
                 <div style="text-align: center;">
                     <h3>Resultado:</h3>
-                    <p style="font-size: 1.2rem; font-weight: bold;">Organização total e zero estresse.</p>
+                    <p style="font-size: 1.2rem; font-weight: bold;">Organização total e zero estresse para você.</p>
                 </div>
             </div>
         </div>
@@ -284,14 +309,16 @@
                 <img src="organizacao.png" alt="Organização">
             </div>
             <div>
-                <h2>Portfólio Empresarial</h2>
+                <h2>Portfólio Empresarial (Organização)</h2>
                 <h3>Centralização de Arquivos</h3>
-                <p>Crio uma pasta centralizada contendo:</p>
-                <ul>
-                    <li>☑ Pasta de Marca (Logos e Manual)</li>
-                    <li>☑ Histórico de Artes e Vídeos</li>
-                    <li>☑ Documento de Senhas e Acessos</li>
+                <p>Um dos maiores problemas das empresas é a perda de ativos digitais (senhas, logos, artes antigas). Eu resolvo isso <strong>organizando tudo</strong>.</p>
+                <p>Crio o Portfólio Empresarial da sua marca, uma pasta centralizada contendo:</p>
+                <ul class="card-list">
+                    <li><strong>Pasta de Marca:</strong> Todas as variações de Logo e Manual.</li>
+                    <li><strong>Pasta de Marketing:</strong> Histórico de artes e vídeos criados.</li>
+                    <li><strong>Acessos:</strong> Documento seguro com logins e senhas.</li>
                 </ul>
+                <p><em>Você nunca mais vai perder um arquivo importante.</em></p>
             </div>
         </div>
     </section>
@@ -301,11 +328,13 @@
             <div>
                 <h2>Tráfego Pago (Ads)</h2>
                 <h3>Acelerando Resultados</h3>
-                <p>Gestão estratégica no Instagram, Facebook e Google.</p>
+                <p>Gestão estratégica de anúncios no Instagram, Facebook, TikTok e Google.</p>
                 <div style="background:#fff; padding:20px; border-radius:8px; border:1px solid #ccc;">
                     <h4>Case Real: Varejo</h4>
                     <p>Investimento: ~R$ 3.000 / mês</p>
-                    <p style="color:green; font-weight:bold;">Retorno: ~R$ 14.000 / mês</p>
+                    <p>Retorno (Loja Física): ~R$ 14.000 / mês</p>
+                    <hr style="margin: 10px 0;">
+                    <p><em>*Foco total em ROI (Retorno sobre Investimento).*</em></p>
                 </div>
             </div>
             <div>
@@ -328,25 +357,25 @@
                 <div class="client-item">
                      <img src="logo_lions_dev.png" alt="Logo Lions Dev">
                     <h3>Lions Dev</h3>
-                    <p style="font-size: 0.9rem;">Captação de alunos.</p>
+                    <p style="font-size: 0.9rem;">Captação de alunos para cursos tech.</p>
                 </div>
 
                 <div class="client-item">
                     <img src="sos pg.png" alt="Logo SOS">
                     <h3>SOS - Obras Sociais</h3>
-                    <p style="font-size: 0.9rem;">Ações sociais.</p>
+                    <p style="font-size: 0.9rem;">Divulgação de cursos e ações sociais.</p>
                 </div>
 
                 <div class="client-item">
                     <img src="Logo _ Sauvvi Tech.png" alt="Logo Sauvvitech">
                     <h3>Sauvvitech</h3>
-                    <p style="font-size: 0.9rem;">Health Tech.</p>
+                    <p style="font-size: 0.9rem;">Health Tech em ascensão no mercado.</p>
                 </div>
 
                 <div class="client-item">
                     <img src="Logo_atacadao.png" alt="Logo Atacadão da Paz">
                     <h3>Atacadão da Paz</h3>
-                    <p style="font-size: 0.9rem;">Varejo/Atacado.</p>
+                    <p style="font-size: 0.9rem;">Varejo/Atacado de Limpeza.</p>
                 </div>
             </div>
         </div>
@@ -354,21 +383,19 @@
 
     <section id="oferta" class="offer-section">
         <div class="container">
-            <h3 style="font-weight: 700; color: var(--cor-roxo-escuro); font-size: 1.5rem; margin-bottom: 10px;">Você precisa ver para crer.</h3>
-            <p>Por isso, eliminei o risco. Teste antes de contratar.</p>
+            <h3>Você precisa ver para crer.</h3>
+            <p style="text-align: center;">Por isso, eliminei o risco. Teste antes de contratar.</p>
             
-            <div style="margin-top: 40px;">
-                <h2 class="offer-title">1 Semana de Teste Gratuito</h2>
-                <p style="font-size: 1.1rem; color: #555;">Uma degustação completa da minha entrega de marketing.</p>
-                
-                <ul class="offer-list">
-                    <li>✓ Planejamento</li>
-                    <li>✓ Criação de Artes</li>
-                    <li>✓ Sem Fidelidade</li>
-                </ul>
-                
-                <a href="https://wa.me/5542998621712" class="btn-cta">Quero meu Teste</a>
-            </div>
+            <h2 class="offer-title">1 Semana de Teste Gratuito</h2>
+            <p style="text-align: center; font-size: 1.2rem;">Uma degustação completa da minha entrega de marketing.</p>
+            
+            <ul class="offer-list">
+                <li>✓ Planejamento</li>
+                <li>✓ Criação de Artes</li>
+                <li>✓ Sem Fidelidade</li>
+            </ul>
+            
+            <a href="https://wa.me/5542998621712" class="btn-cta">Quero meu Teste</a>
         </div>
     </section>
 
@@ -377,7 +404,7 @@
             <img src="qr code whats.png" alt="QR Code" style="width: 300px; margin: 0 auto 30px auto; border: 1px solid #ddd;">
             
             <h2 style="margin-bottom: 10px;">Vamos organizar sua marca?</h2>
-            <p>Entre em contato pelo WhatsApp e vamos estruturar o crescimento da sua empresa.</p>
+            <p style="text-align: center;">Entre em contato pelo WhatsApp e vamos estruturar o crescimento da sua empresa.</p>
             
             <div style="margin-top: 30px;">
                 <h3 style="font-size: 1.8rem;">Bianca Isabely</h3>
