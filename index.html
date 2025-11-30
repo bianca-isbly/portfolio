@@ -42,7 +42,7 @@
             align-items: center; 
         }
 
-        /* --- 1. CAPA (CORRIGIDA: CORES E ITÁLICO) --- */
+        /* --- 1. CAPA --- */
         .hero-cover {
             height: 100vh;
             display: flex;
@@ -61,9 +61,8 @@
             font-weight: 800;
         }
         
-        /* Estilos específicos para o nome */
         .nome-bianca { color: var(--cor-preto-titulo); font-style: normal; }
-        .nome-isabely { color: var(--cor-roxo-escuro); font-style: italic; font-family: 'Georgia', serif; /* Fonte serifada para dar o toque elegante do PDF */ }
+        .nome-isabely { color: var(--cor-roxo-escuro); font-style: italic; font-family: 'Georgia', serif; }
         
         .hero-subtitle {
             font-size: 1.2rem;
@@ -110,7 +109,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        /* --- SPRINTS (ÍCONES VOLTARAM) --- */
+        /* --- SPRINTS --- */
         .sprints-container {
             display: flex;
             justify-content: space-between;
@@ -139,25 +138,24 @@
             color: var(--cor-roxo-escuro);
         }
 
-        /* --- CLIENTES (BOXES IGUAL PDF) --- */
+        /* --- CLIENTES --- */
         .clients-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px; 
-            align-items: stretch; /* Estica para ficarem da mesma altura */
+            align-items: stretch;
         }
         .client-card {
             background: #fff;
             padding: 30px 20px;
             border-radius: 10px;
-            border: 1px solid #eee; /* Borda suave */
+            border: 1px solid #eee;
             box-shadow: 0 4px 10px rgba(0,0,0,0.03);
             text-align: center;
             transition: 0.3s;
         }
         .client-card:hover { border-color: var(--cor-roxo-escuro); transform: translateY(-5px); }
-        
         .client-card img { max-height: 70px; margin: 0 auto 20px auto; object-fit: contain; }
-        .client-card h3 { color: var(--cor-texto); font-size: 1.1rem; margin-bottom: 5px; } /* Nome preto/cinza */
+        .client-card h3 { color: var(--cor-texto); font-size: 1.1rem; margin-bottom: 5px; }
         .client-card p { font-size: 0.9rem; line-height: 1.4; color: #666; margin: 0; text-align: center; }
 
         /* --- TICKET (IMAGEM) --- */
@@ -168,7 +166,17 @@
         }
         .ticket-image-container img {
             width: 100%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra para destacar */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* --- DESTAQUE DE TEXTO (NOVO) --- */
+        .destaque-oferta {
+            font-size: 2.8rem; /* Tamanho bem grande */
+            color: var(--cor-roxo-escuro);
+            font-weight: 800; /* Negrito forte */
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 10px;
         }
 
         /* BOTÕES E RODAPÉ */
@@ -202,6 +210,7 @@
         @media (max-width: 768px) {
             .grid-2 { grid-template-columns: 1fr; gap: 30px; }
             .hero-title { font-size: 2.5rem; }
+            .destaque-oferta { font-size: 2rem; } /* Ajuste para celular */
             .sprints-container { flex-direction: column; }
         }
     </style>
@@ -426,7 +435,8 @@
 
     <section id="oferta" class="offer-section" style="background: white;">
         <div class="container">
-            <h3>Você precisa ver para crer.</h3>
+            <h2 class="destaque-oferta">Você precisa ver para crer.</h2>
+            
             <p style="text-align: center; margin-bottom: 30px;">Por isso, eliminei o risco. Teste antes de contratar.</p>
             
             <div class="ticket-image-container">
