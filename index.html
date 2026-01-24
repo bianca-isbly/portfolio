@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bianca Isabely | Assessoria de Marketing</title>
+    <title>Camargo Tech & Design | Assessoria de Marketing</title>
     <style>
+        /* --- NOVA IDENTIDADE VISUAL: CAMARGO TECH & DESIGN --- */
         :root {
-            --cor-roxo-escuro: #4B0082;
-            --cor-rosa-claro: #F3E5F5;
-            --cor-branco: #ffffff;
-            --cor-texto: #333333;
-            --cor-preto-titulo: #1a1a1a;
-            --cor-whats: #25D366;
-            --cor-lucro: #009e2a;
+            /* Paleta Principal */
+            --cor-fundo-principal: #101527; /* Azul marinho profundo (Fundo do site) */
+            --cor-texto-claro: #e6e6e6;     /* Cinza claro (Texto principal) */
+            --cor-destaque: #83acbd;        /* Azul acinzentado (Botões, ícones, links, ROI) */
+            --cor-fundo-secundario: #233652; /* Azul médio (Cards, seções alternadas) */
+            
+            /* Mantendo a fonte para consistência, mas a cor muda */
             --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -21,18 +22,22 @@
         
         body {
             font-family: var(--fonte-principal);
-            color: var(--cor-texto);
+            background-color: var(--cor-fundo-principal); /* Fundo escuro */
+            color: var(--cor-texto-claro); /* Texto claro */
             line-height: 1.6;
-            background-color: var(--cor-branco);
             overflow-x: hidden;
         }
 
-        h1, h2, h3 { color: var(--cor-roxo-escuro); font-weight: 700; margin-bottom: 0.8rem; }
-        h4 { color: var(--cor-texto); font-weight: 600; margin-bottom: 0.5rem; }
+        /* Títulos agora em cor clara ou destaque */
+        h1, h2, h3 { color: var(--cor-texto-claro); font-weight: 700; margin-bottom: 0.8rem; }
+        /* Subtítulos em tom de destaque para hierarquia */
+        h3 { color: var(--cor-destaque); } 
+        h4 { color: var(--cor-texto-claro); font-weight: 600; margin-bottom: 0.5rem; opacity: 0.9; }
         p { margin-bottom: 1rem; text-align: justify; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        img { max-width: 100%; height: auto; border-radius: 8px; display: block; }
+        /* Imagens com leve brilho na borda para destacar no fundo escuro */
+        img { max-width: 100%; height: auto; border-radius: 8px; display: block; border: 1px solid #233652; }
         
         .grid-2 { 
             display: grid; 
@@ -41,6 +46,7 @@
             align-items: center; 
         }
 
+        /* --- 1. CAPA (HERO) TECH --- */
         .hero-cover {
             height: 100vh;
             display: flex;
@@ -48,7 +54,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #fff, #fcf5fd);
+            /* Gradiente sutil no fundo escuro */
+            background: linear-gradient(135deg, var(--cor-fundo-principal) 0%, var(--cor-fundo-secundario) 100%);
             position: relative;
         }
         
@@ -57,17 +64,20 @@
             margin-bottom: 10px;
             animation: fadeIn 1.5s ease-in;
             font-weight: 800;
+            color: var(--cor-texto-claro);
+            text-transform: uppercase; /* Mais imponente */
+            letter-spacing: 2px;
         }
         
-        .nome-bianca { color: var(--cor-preto-titulo); font-style: normal; }
-        .nome-isabely { color: var(--cor-roxo-escuro); font-style: italic; font-family: 'Georgia', serif; }
+        /* Destaque sutil em parte do nome se desejar, senão deixe tudo claro */
+        .nome-tech { color: var(--cor-destaque); }
         
         .hero-subtitle {
             font-size: 1.2rem;
-            color: #666;
-            letter-spacing: 2px;
+            color: var(--cor-destaque); /* Subtítulo na cor de destaque */
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
             font-weight: 600;
         }
 
@@ -77,7 +87,7 @@
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
-            color: var(--cor-roxo-escuro);
+            color: var(--cor-destaque); /* Seta na cor de destaque */
             font-size: 2rem;
             cursor: pointer;
         }
@@ -90,22 +100,30 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* --- 2. SOBRE MIM --- */
-        .about-section { padding: 80px 20px; background-color: var(--cor-branco); }
+        .about-section { padding: 80px 20px; background-color: var(--cor-fundo-principal); }
         .about-img {
             width: 280px; height: 280px; object-fit: cover;
-            border-radius: 50%; border: 6px solid var(--cor-roxo-escuro);
+            /* Borda na cor de destaque */
+            border-radius: 50%; border: 4px solid var(--cor-destaque);
             margin: 0 auto;
+            box-shadow: 0 0 20px rgba(131, 172, 189, 0.2); /* Glow sutil */
         }
 
-        section { padding: 80px 0; border-bottom: 1px solid #f9f9f9; }
-        .bg-light { background-color: var(--cor-rosa-claro); border-bottom: none; }
+        /* SEÇÕES GERAIS */
+        section { padding: 80px 0; border-bottom: 1px solid var(--cor-fundo-secundario); }
+        /* Fundo alternado agora é o azul médio */
+        .bg-light { background-color: var(--cor-fundo-secundario); border-bottom: none; }
+        
+        /* Listas com visual de "Card" escuro */
         .card-list { list-style: none; }
         .card-list li {
-            background: #fff; padding: 20px; margin-bottom: 15px;
-            border-left: 5px solid var(--cor-roxo-escuro);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            background: var(--cor-fundo-secundario); /* Fundo do item da lista */
+            padding: 20px; margin-bottom: 15px;
+            border-left: 4px solid var(--cor-destaque); /* Borda lateral de destaque */
+            border-radius: 0 8px 8px 0;
         }
-        
+
+        /* --- SPRINTS (VISUAL TECH) --- */
         .sprints-container {
             display: flex;
             justify-content: space-between;
@@ -116,386 +134,3 @@
         .sprint-item {
             flex: 1;
             min-width: 200px;
-            background: #fff;
-            padding: 25px 15px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            border-top: 4px solid var(--cor-roxo-escuro);
-        }
-        .sprint-item:hover { transform: translateY(-10px); }
-        .sprint-icon {
-            width: 50px; height: 50px;
-            background: var(--cor-rosa-claro);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 15px auto;
-            color: var(--cor-roxo-escuro);
-        }
-
-        .clients-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px; 
-            align-items: stretch;
-        }
-        .client-card {
-            background: #fff;
-            padding: 30px 20px;
-            border-radius: 10px;
-            border: 1px solid #eee;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            text-align: center;
-            transition: 0.3s;
-        }
-        .client-card:hover { border-color: var(--cor-roxo-escuro); transform: translateY(-5px); }
-        .client-card img { max-height: 70px; margin: 0 auto 20px auto; object-fit: contain; }
-        .client-card h3 { color: var(--cor-texto); font-size: 1.1rem; margin-bottom: 5px; }
-        .client-card p { font-size: 0.9rem; line-height: 1.4; color: #666; margin: 0; text-align: center; }
-
-        .ticket-image-container {
-            max-width: 800px;
-            margin: 30px auto;
-            text-align: center;
-        }
-        .ticket-image-container img {
-            width: 100%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .destaque-oferta {
-            font-size: 2.8rem;
-            color: var(--cor-roxo-escuro);
-            font-weight: 800;
-            text-align: center;
-            line-height: 1.2;
-            margin-bottom: 10px;
-        }
-
-        .btn-whatsapp-large {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--cor-whats);
-            color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s;
-            margin: 20px auto;
-        }
-        .btn-whatsapp-large:hover { transform: scale(1.05); background-color: #128c7e; }
-        
-        footer { background: white; text-align: center; padding: 60px 20px 20px 20px; border-top: 1px solid #eee; }
-        
-        .copyright {
-            margin-top: 50px;
-            font-size: 0.85rem;
-            color: #999;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 20px;
-        }
-
-        .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
-            background-color: var(--cor-whats); color: white; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 100; transition: 0.3s;
-        }
-        .whatsapp-float:hover { transform: scale(1.1); }
-
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
-            .hero-title { font-size: 2.5rem; }
-            .destaque-oferta { font-size: 2rem; }
-            .sprints-container { flex-direction: column; }
-        }
-
-        @media (max-width: 768px) {
-            p, h1, h2, h3, li {
-                text-align: left !important;
-            }
-            .container {
-                padding: 20px 25px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <a href="https://wa.me/5542998621712" class="whatsapp-float" target="_blank" title="Chamar no WhatsApp">
-        <svg style="width:35px;height:35px;fill:white;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487 2.721 1.173 2.721.782 3.216.732.495-.05 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-    </a>
-
-    <header class="hero-cover">
-        <h3 class="hero-subtitle">ASSESSORIA EM MARKETING</h3>
-        <h1 class="hero-title">
-            <span class="nome-bianca">Bianca</span> 
-            <span class="nome-isabely">Isabely</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: #555; text-align: center;">Estratégia, Rebranding e Gestão Comercial</p>
-        <div class="scroll-down" onclick="document.getElementById('sobre').scrollIntoView();">&#8595;</div>
-    </header>
-
-    <section id="sobre" class="about-section">
-        <div class="container" style="text-align: center;">
-            <img src="bia perfil.png" alt="Foto Bianca" class="about-img">
-            <div style="max-width: 800px; margin: 30px auto 0 auto;">
-                <h2>Sobre Mim</h2>
-                <h3 style="color: var(--cor-texto); font-weight: 400; margin-bottom: 20px;">Marketing que organiza e vende.</h3>
-                <p>Estou aqui para oferecer uma assessoria <strong>360°</strong> em Marketing para o seu negócio. Diferente de designers que apenas entregam uma imagem e somem, eu cuido da saúde visual e organizacional do seu negócio.</p>
-                <p>Meu trabalho envolve desde a modernização da sua marca antiga até encontrar a gráfica mais barata para seus uniformes.</p>
-                <p><strong>Eu "arrumo a casa" para que sua empresa transmita profissionalismo em cada detalhe.</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container grid-2">
-            <div><img src="1ª Brandig.JPG" alt="Conceito Branding"></div>
-            <div>
-                <h2>1. Manual de marca: Conceito & Estratégia</h2>
-                <h3>Por que sua marca existe?</h3>
-                <p>Antes de desenhar, nós pensamos. O Manual de Marca começa explicando o Conceito por trás do símbolo.</p>
-                <ul class="card-list">
-                    <li><strong>Significado da Logo:</strong> Por que escolhemos este símbolo? O que ele representa na mente do seu cliente?</li>
-                    <li><strong>Psicologia das Cores:</strong> Por que azul e não vermelho? Explicamos como as cores influenciam a decisão de compra do seu público.</li>
-                    <li><strong>Tom de Voz:</strong> Como sua marca "fala"? É séria, divertida ou técnica?</li>
-                </ul>
-                <p style="color: #C2185B; font-weight: bold;"><em>*Uma marca com significado vende mais.*</em></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-light">
-        <div class="container grid-2">
-            <div>
-                <h2>2. Branding: Itens Técnicos</h2>
-                <p>A parte prática que garante que sua marca seja respeitada em qualquer lugar.</p>
-                <ul class="card-list">
-                    <li><strong>Rebranding & Vetorização:</strong> Entrego sua logo em vetor (PDF/SVG). Pode ampliar para um outdoor gigante que não perde qualidade.</li>
-                    <li><strong>Códigos de Cor (CMYK vs RGB):</strong> Garante que o mesmo roxo da tela seja o mesmo roxo do banner ou cartão de visita que a gráfica imprimir.</li>
-                    <li><strong>Mockups (Aplicações):</strong> Mostro como sua marca fica em Uniformes, Carros e Fachadas antes de você gastar com produção.</li>
-                    <li><strong>Tipografia:</strong> As fontes oficiais da sua empresa.</li>
-                </ul>
-            </div>
-            <div><img src="itens tecnicos.png" alt="Itens Técnicos"></div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container grid-2">
-            <div><img src="inpi.png" alt="INPI"></div>
-            <div>
-                <h2>Registro de Marca (INPI)</h2>
-                <h3>Protegendo seu Patrimônio.</h3>
-                <p>Investir em fachada e marketing sem ter o registro é construir casa em terreno alugado. <strong>Se não registrou no INPI, você corre risco.</strong></p>
-                
-                <div style="background:#fff; padding:20px; border-left:5px solid #d32f2f; margin-top: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <h4 style="color: #d32f2f; margin-bottom: 5px;">O risco real:</h4>
-                    <p style="margin:0; font-size: 0.95rem;">Se um concorrente registrar antes, você pode ser processado e obrigado a mudar de nome, perdendo toda a clientela.</p>
-                </div>
-                
-                <p style="margin-top: 20px; color: #C2185B; font-weight: bold;">Eu cuido da análise de viabilidade e acompanho o processo.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-light">
-        <div class="container grid-2">
-            <div>
-                <h2>Design Gráfico & Assessoria Offline</h2>
-                <h3>Do Digital ao Mundo Real</h3>
-                <p>Eu não apenas crio a arte; ofereço <strong>Assessoria de Produção</strong> para encontrar os melhores fornecedores (gráficas) com o menor custo.</p>
-                <ul style="padding-left:20px;">
-                    <li>Cartões de Visita</li>
-                    <li>Panfletos e Folders</li>
-                    <li>Fachadas de Loja</li>
-                    <li>Banners e Faixas</li>
-                    <li>Adesivos para Frota</li>
-                    <li>Uniformes</li>
-                </ul>
-            </div>
-            <div><img src="mkt fisico.png" alt="Design Offline"></div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container grid-2">
-            <div style="display:flex; justify-content:center;">
-                <img src="edicaodevideos.png" alt="Edição Celular" style="max-width: 350px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-radius: 20px;">
-            </div>
-            <div>
-                <h2>Filmmaker & Edição</h2>
-                <h3>Vídeos conectam e vendem muito mais.</h3>
-                <p>Ofereço o serviço completo de produção audiovisual:</p>
-                <div style="margin-bottom:20px;">
-                    <h4>1. Captação (Gravação)</h4>
-                    <p>Vou até sua empresa para dirigir e gravar cenas dos produtos, serviços e bastidores com olhar profissional.</p>
-                </div>
-                <div>
-                    <h4>2. Edição Viral</h4>
-                    <p>Edição focada em retenção para Reels e TikTok. Cortes rápidos, legendas dinâmicas, transições e músicas em alta.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-light">
-        <div class="container">
-            <h2 style="text-align: center;">Gestão de Redes (Sprints)</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto;">Metodologia de Sprints (Ciclos) para Instagram, TikTok, Facebook e LinkedIn.</p>
-            
-            <div class="sprints-container">
-                <div class="sprint-item">
-                    <div class="sprint-icon">
-                        <svg style="width:24px;height:24px;fill:currentColor;" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
-                    </div>
-                    <h4>1. Planejamento</h4>
-                    <p style="font-size:0.9rem; text-align:center;">Definição do tema da semana.</p>
-                </div>
-
-                <div class="sprint-item">
-                    <div class="sprint-icon">
-                        <svg style="width:24px;height:24px;fill:currentColor;" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-                    </div>
-                    <h4>2. Produção</h4>
-                    <p style="font-size:0.9rem; text-align:center;">Criação das artes e edição de vídeos.</p>
-                </div>
-
-                <div class="sprint-item">
-                    <div class="sprint-icon">
-                        <svg style="width:24px;height:24px;fill:currentColor;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                    </div>
-                    <h4>3. Aprovação</h4>
-                    <p style="font-size:0.9rem; text-align:center;">Você valida tudo antes de ir ao ar.</p>
-                </div>
-
-                <div class="sprint-item">
-                    <div class="sprint-icon">
-                        <svg style="width:24px;height:24px;fill:currentColor;" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                    </div>
-                    <h4>4. Postagem</h4>
-                    <p style="font-size:0.9rem; text-align:center;">Agendamento automático.</p>
-                </div>
-            </div>
-
-            <p style="text-align: center; margin-top: 30px; font-weight: bold; font-size: 1.2rem; color: var(--cor-roxo-escuro);">Resultado: Organização total e zero estresse para você.</p>
-        </div>
-    </section>
-
-    <section>
-        <div class="container grid-2">
-            <div><img src="organizacao.png" alt="Organização"></div>
-            <div>
-                <h2>Portfólio Empresarial (Organização)</h2>
-                <h3>Centralização de Arquivos</h3>
-                <p>Um dos maiores problemas das empresas é a perda de ativos digitais (senhas, logos, artes antigas). Eu resolvo isso <strong>organizando tudo</strong>.</p>
-                <p>Crio o Portfólio Empresarial da sua marca, uma pasta centralizada contendo:</p>
-                <ul class="card-list">
-                    <li><strong>Pasta de Marca:</strong> Todas as variações de Logo e Manual.</li>
-                    <li><strong>Pasta de Marketing:</strong> Histórico de artes e vídeos criados.</li>
-                    <li><strong>Acessos:</strong> Documento seguro com logins e senhas.</li>
-                </ul>
-                <p style="color: #C2185B; font-weight: bold;"><em>Você nunca mais vai perder um arquivo importante.</em></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-light">
-        <div class="container grid-2">
-            <div>
-                <h2>Tráfego Pago (Ads)</h2>
-                <h3>Acelerando Resultados</h3>
-                <p>Gestão estratégica de anúncios no Instagram, Facebook, TikTok e Google.</p>
-                <div style="background:#fff; padding:20px; border-radius:8px; border:1px solid #ccc;">
-                    <h4>Case Real: Varejo</h4>
-                    <p>Investimento: ~R$ 3.000 / mês</p>
-                    <p style="font-size:1.1rem;">Retorno (Loja Física): <span style="color: var(--cor-lucro); font-weight: 800;">~R$ 14.000 / mês</span></p>
-                    <p style="font-size:0.9rem; margin-top:10px;"><em>*Foco total em ROI (Retorno sobre Investimento).*</em></p>
-                </div>
-            </div>
-            <div><img src="trafegopago.png" alt="Tráfego Pago"></div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 40px;">Clientes & Experiência</h2>
-            <div class="clients-grid">
-                
-                <div class="client-card">
-                    <img src="logo_lions_startups.png" alt="Lions Startups">
-                    <h3>Lions Startups</h3>
-                    <p>Foco empresarial e conexões B2B.</p>
-                </div>
-
-                <div class="client-card">
-                    <img src="logo_lions_dev.png" alt="Lions Dev">
-                    <h3>Lions Dev</h3>
-                    <p>Captação de alunos para cursos tech.</p>
-                </div>
-
-                <div class="client-card">
-                    <img src="sos pg.png" alt="SOS">
-                    <h3>SOS - Obras Sociais</h3>
-                    <p>Divulgação de cursos e ações sociais.</p>
-                </div>
-
-                <div class="client-card">
-                    <img src="Logo _ Sauvvi Tech.png" alt="Sauvvitech">
-                    <h3>Sauvvitech</h3>
-                    <p>Health Tech em ascensão no mercado.</p>
-                </div>
-
-                <div class="client-card">
-                    <img src="Logo_atacadao.png" alt="Atacadão">
-                    <h3>Atacadão da Paz</h3>
-                    <p>Varejo/Atacado de Limpeza.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="oferta" class="offer-section" style="background: white;">
-        <div class="container">
-            <h2 class="destaque-oferta">Você precisa ver para crer.</h2>
-            <p style="text-align: center; margin-bottom: 30px;">Por isso, eliminei o risco. Teste antes de contratar.</p>
-            
-            <div class="ticket-image-container">
-                <img src="imagem_ticket.png" alt="Vale 1 Semana Gratuita">
-            </div>
-
-            <div style="text-align: center;">
-                <a href="https://wa.me/5542998621712" class="btn-whatsapp-large">Quero meu Teste</a>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contato">
-        <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <h2 style="margin-bottom: 10px;">Vamos organizar sua marca?</h2>
-            <p style="margin-bottom: 20px;">Entre em contato e vamos estruturar o crescimento da sua empresa.</p>
-            
-            <a href="https://wa.me/5542998621712" class="btn-whatsapp-large">
-                <svg style="width:24px;height:24px;fill:white;margin-right:10px;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487 2.721 1.173 2.721.782 3.216.732.495-.05 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Chamar no WhatsApp
-            </a>
-
-            <div class="copyright">
-                Feito com &#10084; por Bianca Isabely - 2025
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-
-
-
-
