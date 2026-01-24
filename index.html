@@ -8,12 +8,11 @@
         /* --- NOVA IDENTIDADE VISUAL: CAMARGO TECH & DESIGN --- */
         :root {
             /* Paleta Principal */
-            --cor-fundo-principal: #101527; /* Azul marinho profundo (Fundo do site) */
-            --cor-texto-claro: #e6e6e6;     /* Cinza claro (Texto principal) */
-            --cor-destaque: #83acbd;        /* Azul acinzentado (Botões, ícones, links, ROI) */
-            --cor-fundo-secundario: #233652; /* Azul médio (Cards, seções alternadas) */
+            --cor-fundo-principal: #101527; /* Azul marinho profundo */
+            --cor-texto-claro: #e6e6e6;     /* Cinza claro */
+            --cor-destaque: #83acbd;        /* Azul acinzentado */
+            --cor-fundo-secundario: #233652; /* Azul médio */
             
-            /* Mantendo a fonte para consistência, mas a cor muda */
             --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -22,21 +21,20 @@
         
         body {
             font-family: var(--fonte-principal);
-            background-color: var(--cor-fundo-principal); /* Fundo escuro */
-            color: var(--cor-texto-claro); /* Texto claro */
+            background-color: var(--cor-fundo-principal);
+            color: var(--cor-texto-claro);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Títulos agora em cor clara ou destaque */
         h1, h2, h3 { color: var(--cor-texto-claro); font-weight: 700; margin-bottom: 0.8rem; }
-        /* Subtítulos em tom de destaque para hierarquia */
         h3 { color: var(--cor-destaque); } 
         h4 { color: var(--cor-texto-claro); font-weight: 600; margin-bottom: 0.5rem; opacity: 0.9; }
         p { margin-bottom: 1rem; text-align: justify; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        /* Imagens com leve brilho na borda para destacar no fundo escuro */
+        
+        /* Imagens gerais (com borda sutil) */
         img { max-width: 100%; height: auto; border-radius: 8px; display: block; border: 1px solid #233652; }
         
         .grid-2 { 
@@ -46,7 +44,7 @@
             align-items: center; 
         }
 
-        /* --- 1. CAPA (HERO) TECH --- */
+        /* --- 1. CAPA (HERO) COM LOGO GRANDE --- */
         .hero-cover {
             height: 100vh;
             display: flex;
@@ -54,30 +52,27 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* Gradiente sutil no fundo escuro */
             background: linear-gradient(135deg, var(--cor-fundo-principal) 0%, var(--cor-fundo-secundario) 100%);
             position: relative;
         }
         
-        .hero-title {
-            font-size: 4rem;
-            margin-bottom: 10px;
+        /* Estilo exclusivo da Logo na Capa */
+        .hero-logo {
+            width: 100%;
+            max-width: 500px; /* Tamanho BEM GRANDE no PC */
+            height: auto;
+            border: none; /* Remove a borda padrão */
+            border-radius: 0; /* Remove arredondamento */
+            margin-bottom: 20px;
             animation: fadeIn 1.5s ease-in;
-            font-weight: 800;
-            color: var(--cor-texto-claro);
-            text-transform: uppercase; /* Mais imponente */
-            letter-spacing: 2px;
         }
-        
-        /* Destaque sutil em parte do nome se desejar, senão deixe tudo claro */
-        .nome-tech { color: var(--cor-destaque); }
         
         .hero-subtitle {
             font-size: 1.2rem;
-            color: var(--cor-destaque); /* Subtítulo na cor de destaque */
+            color: var(--cor-destaque);
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
@@ -87,7 +82,7 @@
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
-            color: var(--cor-destaque); /* Seta na cor de destaque */
+            color: var(--cor-destaque);
             font-size: 2rem;
             cursor: pointer;
         }
@@ -99,31 +94,22 @@
         }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- 2. SOBRE MIM --- */
+        /* --- 2. SOBRE NÓS (SEM FOTO) --- */
         .about-section { padding: 80px 20px; background-color: var(--cor-fundo-principal); }
-        .about-img {
-            width: 280px; height: 280px; object-fit: cover;
-            /* Borda na cor de destaque */
-            border-radius: 50%; border: 4px solid var(--cor-destaque);
-            margin: 0 auto;
-            box-shadow: 0 0 20px rgba(131, 172, 189, 0.2); /* Glow sutil */
-        }
-
+        
         /* SEÇÕES GERAIS */
         section { padding: 80px 0; border-bottom: 1px solid var(--cor-fundo-secundario); }
-        /* Fundo alternado agora é o azul médio */
         .bg-light { background-color: var(--cor-fundo-secundario); border-bottom: none; }
         
-        /* Listas com visual de "Card" escuro */
         .card-list { list-style: none; }
         .card-list li {
-            background: var(--cor-fundo-secundario); /* Fundo do item da lista */
+            background: var(--cor-fundo-secundario);
             padding: 20px; margin-bottom: 15px;
-            border-left: 4px solid var(--cor-destaque); /* Borda lateral de destaque */
+            border-left: 4px solid var(--cor-destaque);
             border-radius: 0 8px 8px 0;
         }
 
-        /* --- SPRINTS (VISUAL TECH) --- */
+        /* --- SPRINTS --- */
         .sprints-container {
             display: flex;
             justify-content: space-between;
@@ -134,49 +120,46 @@
         .sprint-item {
             flex: 1;
             min-width: 200px;
-            background: var(--cor-fundo-principal); /* Card mais escuro que o fundo da seção */
+            background: var(--cor-fundo-principal);
             padding: 25px 15px;
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s, border-color 0.3s;
             border: 1px solid var(--cor-fundo-secundario);
-            border-top: 4px solid var(--cor-destaque); /* Topo colorido */
+            border-top: 4px solid var(--cor-destaque);
         }
         .sprint-item:hover { transform: translateY(-10px); border-color: var(--cor-destaque); }
         .sprint-icon {
             width: 60px; height: 60px;
-            background: var(--cor-fundo-secundario); /* Fundo do ícone */
+            background: var(--cor-fundo-secundario);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             margin: 0 auto 20px auto;
-            color: var(--cor-destaque); /* Cor do ícone SVG */
+            color: var(--cor-destaque);
             border: 2px solid var(--cor-destaque);
         }
 
-        /* --- CLIENTES (CARDS ESCLARECIDOS) --- */
+        /* --- CLIENTES --- */
         .clients-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px; 
             align-items: stretch;
         }
-        /* Cards dos clientes precisam ser claros para as logos aparecerem bem, 
-           ou as logos precisam ser brancas. Assumindo logos coloridas, faremos cards claros. */
         .client-card {
-            background: #ffffff; /* Fundo BRANCO para logos funcionarem */
+            background: #ffffff;
             padding: 30px 20px;
             border-radius: 10px;
-            border: 2px solid var(--cor-destaque); /* Borda colorida */
+            border: 2px solid var(--cor-destaque);
             text-align: center;
             transition: 0.3s;
         }
         .client-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(131, 172, 189, 0.3); }
         .client-card img { max-height: 70px; margin: 0 auto 20px auto; object-fit: contain; border: none; }
-        /* Textos dentro do card branco precisam ser escuros */
         .client-card h3 { color: var(--cor-fundo-principal); font-size: 1.1rem; margin-bottom: 5px; }
         .client-card p { font-size: 0.9rem; line-height: 1.4; color: #555; margin: 0; text-align: center; }
 
-        /* --- TICKET (IMAGEM) --- */
+        /* --- TICKET --- */
         .ticket-image-container {
             max-width: 800px;
             margin: 30px auto;
@@ -184,15 +167,13 @@
         }
         .ticket-image-container img {
             width: 100%;
-            /* Sombra colorida para destacar */
             box-shadow: 0 10px 30px rgba(131, 172, 189, 0.2); 
             border: none;
         }
 
-        /* --- DESTAQUE DE TEXTO --- */
         .destaque-oferta {
             font-size: 2.8rem;
-            color: var(--cor-destaque); /* Cor de destaque */
+            color: var(--cor-destaque);
             font-weight: 800;
             text-align: center;
             line-height: 1.2;
@@ -205,8 +186,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--cor-destaque); /* Botão na cor de destaque */
-            color: var(--cor-fundo-principal); /* Texto escuro no botão claro para contraste */
+            background-color: var(--cor-destaque);
+            color: var(--cor-fundo-principal);
             font-size: 1.2rem;
             font-weight: 800;
             padding: 15px 40px;
@@ -217,16 +198,15 @@
             margin: 20px auto;
         }
         .btn-whatsapp-large:hover { transform: scale(1.05); background-color: #6a9aa8; color: white; }
-        .btn-whatsapp-large svg { fill: var(--cor-fundo-principal); } /* Ícone escuro dentro do botão */
+        .btn-whatsapp-large svg { fill: var(--cor-fundo-principal); }
         .btn-whatsapp-large:hover svg { fill: white; }
         
-        /* Rodapé com fundo secundário */
         footer { background: var(--cor-fundo-secundario); text-align: center; padding: 60px 20px 20px 20px; border-top: 1px solid #1a2035; }
         
         .copyright {
             margin-top: 50px;
             font-size: 0.85rem;
-            color: rgba(230, 230, 230, 0.6); /* Texto claro com transparência */
+            color: rgba(230, 230, 230, 0.6);
             border-top: 1px solid rgba(230, 230, 230, 0.1);
             padding-top: 20px;
         }
@@ -241,15 +221,14 @@
         .whatsapp-float:hover { transform: scale(1.1); background-color: #6a9aa8; color: white;}
         .whatsapp-float:hover svg { fill: white; }
 
-        /* Box de Alerta (Risco Real) adaptado para o tema escuro */
         .alert-box {
-            background: rgba(211, 47, 47, 0.1); /* Fundo vermelho bem transparente */
+            background: rgba(211, 47, 47, 0.1);
             padding: 20px; 
-            border-left: 4px solid #d32f2f; /* Borda vermelha mantida */
+            border-left: 4px solid #d32f2f;
             margin-top: 20px; 
             border-radius: 0 8px 8px 0;
         }
-        .alert-title { color: #ff6b6b; margin-bottom: 5px; } /* Vermelho mais claro para ler no escuro */
+        .alert-title { color: #ff6b6b; margin-bottom: 5px; }
 
         @media (max-width: 768px) {
             .grid-2 { grid-template-columns: 1fr; gap: 30px; }
@@ -279,16 +258,14 @@
 
     <header class="hero-cover">
         <h3 class="hero-subtitle">Social Media</h3>
-        <h1 class="hero-title">
-            Camargo <span class="nome-tech">Tech & Design</span>
-        </h1>
+        <img src="camargotechdesign.png" alt="Camargo Tech & Design" class="hero-logo">
+        
         <p style="font-size: 1.3rem; opacity: 0.9;">Estratégia, Rebranding e Gestão Comercial</p>
         <div class="scroll-down" onclick="document.getElementById('sobre').scrollIntoView();">&#8595;</div>
     </header>
 
     <section id="sobre" class="about-section">
         <div class="container" style="text-align: center;">
-            <img src="camargotechdesign.png.png" alt="Logo - Camargo Tech & Design" class="about-img">
             <div style="max-width: 800px; margin: 30px auto 0 auto;">
                 <h2>Sobre Nós</h2>
                 <h3 style="font-weight: 400; margin-bottom: 20px;">Marketing que organiza e vende.</h3>
@@ -546,4 +523,3 @@
 
 </body>
 </html>
-
