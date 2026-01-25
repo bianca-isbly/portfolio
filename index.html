@@ -207,42 +207,48 @@
         .footer-content { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
         .copyright { margin-top: 50px; font-size: 0.85rem; color: rgba(230, 230, 230, 0.6); border-top: 1px solid rgba(230, 230, 230, 0.1); padding-top: 20px; }
 
-        /* =========================================
-           VERSÃO CELULAR (MOBILE) - AJUSTE FINO 
-           ========================================= */
+/* --- VERSÃO CELULAR (CORRIGIDA) --- */
         @media (max-width: 768px) {
-            /* Alinhamentos gerais à esquerda */
+            /* 1. Alinhamentos de Texto */
             p, h1, h2, h3, li, .hero-subtitle, .destaque-oferta, h4 { text-align: left !important; }
-            .hero-cover p, .hero-title, .hero-cover { text-align: center !important; } /* Exceção: Capa centralizada */
+            .hero-cover p, .hero-title, .hero-cover { text-align: center !important; }
             
             .container { padding: 20px 25px; }
             
-/* AJUSTE FINO DO CELULAR */
-            .hero-logo {
-                width: 95vw !important; /* Quase a largura toda do celular */
-                max-width: none !important; /* Sem limite */
-                margin-top: -15vh !important; /* Sobe a logo para não ficar no meio baixo */
-                margin-bottom: -30px !important; /* Aproxima o texto */
+            /* 2. CAPA COMPACTA (Para caber tudo na tela) */
+            .hero-cover {
+                justify-content: center; /* Garante o centro */
+                height: 100vh; /* Força altura da tela */
+                overflow: hidden; /* Corta o que sobrar para não gerar rolagem extra */
             }
 
+            .hero-logo {
+                width: 90vw !important;
+                max-width: 400px !important;
+                /* Puxa a logo BEM pra cima para dar espaço pra seta */
+                margin-top: -25vh !important; 
+                margin-bottom: 0 !important;
+            }
+            
             .hero-cover p {
                 font-size: 1.1rem !important;
-                padding: 0 20px;
-                margin-bottom: 60px !important; /* Espaço para a seta */
+                margin-bottom: 0 !important;
+                padding: 0 15px;
+                line-height: 1.4;
             }
             
-            /* Seta Mobile */
+            /* 3. SETA (ANIMAÇÃO DESTRAVADA) */
             .scroll-down {
-                bottom: 30px !important;
+                bottom: 15vh !important; /* Sobe a seta para ficar bem visível */
                 left: 50% !important;
-                transform: translateX(-50%) !important;
-                animation: bounce 2s infinite !important;
+                /* TIREI O !important DAQUI PARA A ANIMAÇÃO FUNCIONAR */
+                transform: translateX(-50%); 
+                animation: bounce 2s infinite;
             }
             
-            /* Ajustes Grids */
+            /* Ajustes dos Grids */
             .grid-2, .web-grid, .sprints-container { grid-template-columns: 1fr !important; }
             .destaque-oferta { text-align: center !important; font-size: 1.8rem !important; }
-            .btn-whatsapp-large { width: 100%; }
         }
     </style>
 </head>
@@ -547,6 +553,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
