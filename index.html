@@ -308,6 +308,46 @@
                 text-align: center !important;
             }
         }
+
+    /* --- CORREÇÃO DE CORES (RESGATE) --- */
+        /* Garante que o fundo azul médio apareça */
+        .bg-light {
+            background-color: var(--cor-fundo-secundario) !important;
+        }
+
+        /* Garante que o rodapé tenha a cor certa */
+        footer {
+            background-color: var(--cor-fundo-secundario) !important;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- AJUSTES FINAIS PARA CELULAR --- */
+        @media (max-width: 768px) {
+            /* Arruma a Logo que estava pequena/feia */
+            .hero-logo {
+                width: 85% !important;
+                max-width: 320px !important;
+                margin: 40px auto 20px auto !important;
+            }
+
+            /* Arruma os Cards de Site no celular */
+            .web-grid {
+                grid-template-columns: 1fr !important; /* Uma coluna perfeita */
+                gap: 20px; /* Espaço menor entre eles */
+            }
+            
+            .web-card {
+                padding: 25px 15px; /* Espaçamento interno confortável */
+            }
+            
+            /* Título centralizado no mobile */
+            .destaque-oferta {
+                font-size: 1.8rem !important;
+                line-height: 1.3;
+            }
+        }
     </style>
 </head>
 <body>
@@ -611,6 +651,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
