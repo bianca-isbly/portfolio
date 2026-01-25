@@ -56,16 +56,34 @@
             padding: 0 20px; /* Garante margem lateral no mobile */
         }
         
-        /* LOGO GIGANTE E CENTRALIZADA */
+/* --- AJUSTES DA CAPA (HERO) --- */
+        .hero-cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px; /* Garante que não encoste nas bordas laterais */
+            position: relative;
+        }
+
         .hero-logo {
             width: 100%;
-            max-width: 900px; /* Tamanho máximo no PC */
+            max-width: 900px; /* Aumentei para ficar bem imponente no PC */
             height: auto;
             border: none;
             border-radius: 0;
-            margin: 20px 0; /* Espaço em cima e embaixo */
+            margin: 10px auto 20px auto; /* Reduzi as margens verticais da logo */
             display: block;
             animation: fadeIn 1.5s ease-in;
+        }
+
+        /* Aumenta espaço entre o texto e a seta no PC */
+        .hero-cover p {
+            font-size: 1.3rem; 
+            opacity: 0.9;
+            margin-bottom: 60px; /* <--- AQUI: Empurra a seta para baixo */
         }
         
         .hero-subtitle {
@@ -259,10 +277,32 @@
             border-top: 1px solid rgba(230, 230, 230, 0.1); padding-top: 20px;
         }
 
-        /* --- MEDIA QUERIES (CELULAR) - CORREÇÕES FINAIS --- */
+/* --- AJUSTES ESPECÍFICOS PARA CELULAR --- */
         @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
-            .sprints-container { flex-direction: column; }
+            .hero-cover {
+                justify-content: center; /* Mantém centralizado */
+            }
+
+            .hero-logo {
+                width: 100% !important; /* Ocupa toda a largura disponível */
+                max-width: 450px !important; /* Permite ficar maior no celular */
+                margin-top: -15% !important; /* <--- TRUQUE: Puxa a logo pra cima visualmente */
+                margin-bottom: 20px !important;
+            }
+
+            .hero-cover p {
+                font-size: 1.1rem; /* Texto um pouco menor para caber melhor */
+                padding: 0 10px; /* Margem lateral para não bater na borda */
+                margin-bottom: 40px; /* Espaço para a seta não grudar */
+            }
+
+            /* Garante a seta centralizada e visível */
+            .scroll-down {
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                bottom: 25px !important;
+            }
+        }
 
             /* Alinhamento geral à esquerda no celular (exceto capa) */
             p, h1, h2, h3, h4, li {
@@ -651,6 +691,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
