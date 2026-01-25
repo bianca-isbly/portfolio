@@ -390,14 +390,24 @@
             width: 100%;
         }
 
-        /* --- CORREÇÃO FINAL: SETA CENTRALIZADA NO MOBILE --- */
+/* --- CORREÇÃO FINAL: SETA E ANIMAÇÃO MOBILE --- */
         @media (max-width: 768px) {
             .scroll-down {
-                /* Força a seta a ir para o meio da tela */
+                /* Força a ir para o meio exato da tela */
                 left: 50% !important;
-                /* Ajusta o posicionamento exato para o centro */
+                right: auto !important;
+                /* Centraliza compensando o tamanho dela */
                 transform: translateX(-50%) !important;
-                /* Garante que a animação de pular continue funcionando */
+                
+                /* Garante que fique VISÍVEL acima de tudo */
+                z-index: 9999 !important;
+                display: block !important;
+                opacity: 1 !important;
+                
+                /* Sobe um pouquinho (50px) para não ficar escondida atrás da barra do navegador no celular */
+                bottom: 50px !important; 
+                
+                /* Força a animação de pular a funcionar */
                 animation: bounce 2s infinite !important;
             }
         }
@@ -705,6 +715,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
