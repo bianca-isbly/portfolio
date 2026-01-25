@@ -247,16 +247,43 @@
         .whatsapp-float:hover { transform: scale(1.1); background-color: #6a9aa8; color: white;}
         .whatsapp-float:hover svg { fill: white; }
 
+/* --- Box de Alerta (Risco Real) - ESTILO TECH SOFISTICADO --- */
         .alert-box {
-            background: #7f1d1d; /* Vermelho sólido */
-            padding: 25px; 
-            border-left: 6px solid #ef4444;
+            /* Fundo: Gradiente sutil de vermelho escuro para transparente */
+            background: linear-gradient(to right, rgba(80, 10, 10, 0.7), transparent);
+            padding: 25px;
+            /* Borda lateral fina e elegante */
+            border-left: 4px solid #ff4d4d;
+            /* Borda sutil brilhante ao redor */
+            border-top: 1px solid rgba(255, 77, 77, 0.2);
+            border-bottom: 1px solid rgba(255, 77, 77, 0.2);
+            border-right: 1px solid rgba(255, 77, 77, 0.2);
             margin-top: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-radius: 0 12px 12px 0; /* Arredondado só na direita */
+            /* Sombra suave avermelhada */
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.1);
         }
-        .alert-title { color: #ffffff; margin-bottom: 10px; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px;}
-        .alert-box p { color: #ffe5e5; font-weight: 500; font-size: 1.1rem; text-align: left; }
+
+        /* Título dentro do alerta */
+        .alert-title {
+            color: #ff4d4d; /* Vermelho vivo estilo "laser" */
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            display: flex; align-items: center; /* Alinha o ícone */
+        }
+
+        /* Texto do parágrafo */
+        .alert-box p {
+            color: #eeeeee; /* Texto bem claro para leitura fácil */
+            font-weight: 400;
+            font-size: 1rem;
+            margin: 0;
+            line-height: 1.5;
+            text-align: left;
+        }
 
         @media (max-width: 768px) {
             .grid-2 { grid-template-columns: 1fr; gap: 30px; }
@@ -635,6 +662,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
