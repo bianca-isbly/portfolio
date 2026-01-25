@@ -389,6 +389,19 @@
             text-align: center;
             width: 100%;
         }
+
+        /* --- CORREÇÃO FINAL: SETA CENTRALIZADA NO MOBILE --- */
+        @media (max-width: 768px) {
+            .scroll-down {
+                /* Força a seta a ir para o meio da tela */
+                left: 50% !important;
+                /* Ajusta o posicionamento exato para o centro */
+                transform: translateX(-50%) !important;
+                /* Garante que a animação de pular continue funcionando */
+                animation: bounce 2s infinite !important;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -692,6 +705,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
