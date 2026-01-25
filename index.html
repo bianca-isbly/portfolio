@@ -6,13 +6,12 @@
     <title>Camargo Tech & Design</title>
     <link rel="icon" type="image/png" href="favicon.png">
 <style>
-        /* --- CONFIGURAÇÕES GERAIS E PALETA --- */
+        /* --- CONFIGURAÇÕES GERAIS --- */
         :root {
-            --cor-fundo-principal: #101527; /* Azul marinho profundo */
-            --cor-texto-claro: #e6e6e6;     /* Cinza claro */
-            --cor-destaque: #83acbd;        /* Azul acinzentado */
-            --cor-fundo-secundario: #233652; /* Azul médio */
-            
+            --cor-fundo-principal: #101527; 
+            --cor-texto-claro: #e6e6e6;     
+            --cor-destaque: #83acbd;        
+            --cor-fundo-secundario: #233652; 
             --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -27,11 +26,13 @@
             overflow-x: hidden;
         }
 
+        /* --- TIPOGRAFIA --- */
         h1, h2, h3 { color: var(--cor-texto-claro); font-weight: 700; margin-bottom: 0.8rem; }
         h3 { color: var(--cor-destaque); } 
         h4 { color: var(--cor-texto-claro); font-weight: 600; margin-bottom: 0.5rem; opacity: 0.9; }
         p { margin-bottom: 1rem; text-align: justify; }
 
+        /* --- LAYOUT GERAL --- */
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
         img { max-width: 100%; height: auto; border-radius: 8px; display: block; border: 1px solid #233652; }
         
@@ -42,74 +43,71 @@
             align-items: center; 
         }
 
-        /* --- 1. CAPA (HERO) - AJUSTADA --- */
+        /* =========================================
+           1. CAPA (HERO) - AJUSTE FINAL 
+           ========================================= */
         .hero-cover {
-            height: 100vh;
+            height: 100vh; /* Altura total da tela */
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center;     /* Centraliza horizontalmente */
             text-align: center;
             background: linear-gradient(135deg, var(--cor-fundo-principal) 0%, var(--cor-fundo-secundario) 100%);
             position: relative;
             padding: 0 20px;
         }
         
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--cor-destaque);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        /* LOGO GIGANTE NO PC */
+        /* LOGO GIGANTE E IMPONENTE */
         .hero-logo {
-            width: 100%;
-            max-width: 1000px; /* Aumentei para ficar enorme no PC */
+            width: 100%;           /* Tenta ocupar a largura disponível */
+            max-width: 900px;      /* Limite máximo no PC (Bem grande) */
             height: auto;
             border: none;
             border-radius: 0;
-            margin: 20px auto; 
+            margin: 0 auto 30px auto; /* Margem inferior de 30px para afastar do texto */
             display: block;
             animation: fadeIn 1.5s ease-in;
         }
 
-        /* Texto abaixo da logo (PC) */
+        /* TEXTO DA CAPA (Aquele que você quer arrumar) */
         .hero-cover p {
-            font-size: 1.3rem;
+            font-size: 1.6rem;       /* Fonte grande no PC */
+            font-weight: 400;        /* Peso da fonte equilibrado */
+            color: #e6e6e6;          /* Cor clara */
             opacity: 0.9;
-            margin-bottom: 180px; 
+            margin-bottom: 0;        /* Remove margem extra inferior */
+            max-width: 800px;        /* Não deixa a frase ficar muito comprida */
+            line-height: 1.4;
         }
 
-        /* ANIMAÇÃO DA SETA (RESTAURADA) */
+        /* SETA ANIMADA (RESTAURADA) */
         .scroll-down {
             position: absolute;
-            bottom: 30px;
+            bottom: 40px;            /* Distância do fundo */
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%); /* Centraliza exato */
             color: var(--cor-destaque);
-            font-size: 2rem;
+            font-size: 2.5rem;
             cursor: pointer;
-            animation: bounce 2s infinite; /* Chama a animação */
+            animation: bounce 2s infinite; /* Ativa o pulo */
+            z-index: 10;
         }
 
-        /* DEFINIÇÃO DA ANIMAÇÃO (O código que faltava) */
+        /* ANIMAÇÕES */
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
-            40% {transform: translateY(-10px) translateX(-50%);}
-            60% {transform: translateY(-5px) translateX(-50%);}
+            40% {transform: translateY(-15px) translateX(-50%);}
+            60% {transform: translateY(-7px) translateX(-50%);}
         }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- 2. SOBRE NÓS --- */
+        /* =========================================
+           RESTANTE DO SITE 
+           ========================================= */
+        
         .about-section { padding: 80px 20px; background-color: var(--cor-fundo-principal); }
-        
-        /* SEÇÕES GERAIS */
         section { padding: 80px 0; border-bottom: 1px solid var(--cor-fundo-secundario); }
-        
-        /* Fundo Azul Médio (Corrigido) */
         .bg-light { background-color: var(--cor-fundo-secundario) !important; border-bottom: none; }
         
         .card-list { list-style: none; }
@@ -120,51 +118,27 @@
             border-radius: 0 8px 8px 0;
         }
 
-        /* --- SPRINTS --- */
-        .sprints-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
+        /* Sprints */
+        .sprints-container { display: flex; justify-content: space-between; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
         .sprint-item {
-            flex: 1;
-            min-width: 200px;
-            background: var(--cor-fundo-principal);
-            padding: 25px 15px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, border-color 0.3s;
-            border: 1px solid var(--cor-fundo-secundario);
-            border-top: 4px solid var(--cor-destaque);
+            flex: 1; min-width: 200px; background: var(--cor-fundo-principal);
+            padding: 25px 15px; border-radius: 12px; text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s;
+            border: 1px solid var(--cor-fundo-secundario); border-top: 4px solid var(--cor-destaque);
         }
         .sprint-item:hover { transform: translateY(-10px); border-color: var(--cor-destaque); }
         .sprint-icon {
-            width: 60px; height: 60px;
-            background: var(--cor-fundo-secundario);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 20px auto;
-            color: var(--cor-destaque);
-            border: 2px solid var(--cor-destaque);
+            width: 60px; height: 60px; background: var(--cor-fundo-secundario);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px auto; color: var(--cor-destaque); border: 2px solid var(--cor-destaque);
         }
 
-        /* --- WEB DESIGN CARDS --- */
-        .web-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+        /* Web Cards */
+        .web-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
         .web-card {
-            background: var(--cor-fundo-principal); /* Escuro para contrastar com fundo médio */
-            padding: 30px 20px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(131, 172, 189, 0.1);
-            transition: 0.3s;
+            background: var(--cor-fundo-principal); padding: 30px 20px;
+            border-radius: 12px; text-align: center;
+            border: 1px solid rgba(131, 172, 189, 0.1); transition: 0.3s;
         }
         .web-card:hover { transform: translateY(-10px); border-color: var(--cor-destaque); }
         .web-icon-box {
@@ -176,57 +150,43 @@
         .web-card h3 { color: #fff; font-size: 1.3rem; margin-bottom: 10px; }
         .web-card p { color: #ccc; font-size: 0.95rem; }
 
-        /* --- CLIENTES --- */
-        .clients-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px; align-items: stretch;
-        }
+        /* Clientes */
+        .clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
         .client-card {
-            background: #ffffff;
-            padding: 30px 20px;
-            border-radius: 10px;
-            border: 2px solid var(--cor-destaque);
-            text-align: center;
-            transition: 0.3s;
+            background: #ffffff; padding: 30px 20px; border-radius: 10px;
+            border: 2px solid var(--cor-destaque); text-align: center; transition: 0.3s;
         }
-        .client-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(131, 172, 189, 0.3); }
+        .client-card:hover { transform: translateY(-5px); }
         .client-card img { max-height: 70px; margin: 0 auto 20px auto; object-fit: contain; border: none; }
         .client-card h3 { color: var(--cor-fundo-principal); font-size: 1.1rem; margin-bottom: 5px; }
-        .client-card p { font-size: 0.9rem; line-height: 1.4; color: #555; margin: 0; text-align: center; }
+        .client-card p { font-size: 0.9rem; color: #555; margin: 0; text-align: center; }
 
-        /* --- TICKET --- */
         .ticket-image-container { max-width: 800px; margin: 30px auto; text-align: center; }
-        .ticket-image-container img { width: 100%; box-shadow: 0 10px 30px rgba(131, 172, 189, 0.2); border: none; }
-        .destaque-oferta {
-            font-size: 2.8rem; color: var(--cor-destaque); font-weight: 800;
-            text-align: center; line-height: 1.2; margin-bottom: 10px; text-transform: uppercase;
-        }
+        .ticket-image-container img { width: 100%; border: none; }
+        .destaque-oferta { font-size: 2.8rem; color: var(--cor-destaque); font-weight: 800; text-align: center; margin-bottom: 10px; text-transform: uppercase; }
 
-        /* --- ALERTA INPI (Azul Tech) --- */
+        /* Alerta Tech (Azul) */
         .alert-box {
             background: linear-gradient(to right, rgba(131, 172, 189, 0.25), transparent);
-            padding: 25px;
+            padding: 25px; margin-top: 25px; border-radius: 0 12px 12px 0;
             border-left: 5px solid var(--cor-destaque);
             border-top: 1px solid rgba(131, 172, 189, 0.4);
             border-bottom: 1px solid rgba(131, 172, 189, 0.4);
             border-right: 1px solid rgba(131, 172, 189, 0.2);
-            margin-top: 25px;
-            border-radius: 0 12px 12px 0;
-            box-shadow: 0 10px 30px rgba(131, 172, 189, 0.2);
             text-align: left !important;
         }
         .alert-title { color: var(--cor-destaque); margin-bottom: 12px; font-size: 1.2rem; text-transform: uppercase; font-weight: 800; display: flex; align-items: center; }
         .alert-title svg { fill: var(--cor-destaque) !important; }
-        .alert-box p { color: #ffffff; font-weight: 500; font-size: 1.05rem; margin: 0; line-height: 1.5; }
+        .alert-box p { color: #ffffff; font-weight: 500; }
 
-        /* --- BOTÕES VERDES --- */
+        /* Botões */
         .btn-whatsapp-verde {
             display: inline-flex; align-items: center; justify-content: center;
             background-color: #25D366; color: #ffffff !important;
             font-size: 1.1rem; font-weight: 700; padding: 15px 35px;
             border-radius: 50px; text-decoration: none;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s, background-color 0.3s; margin: 15px auto; border: none;
+            transition: 0.3s; margin: 15px auto; border: none;
         }
         .btn-whatsapp-verde:hover { background-color: #128C7E; transform: translateY(-3px); }
         .btn-whatsapp-verde svg { fill: #ffffff !important; width: 24px; height: 24px; margin-right: 10px; }
@@ -240,47 +200,45 @@
         .whatsapp-float svg { fill: #ffffff !important; width: 35px; height: 35px; }
         .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
 
-        /* --- RODAPÉ --- */
-        footer {
-            background-color: var(--cor-fundo-secundario) !important; /* Corrigido para azul médio */
-            padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        footer { background-color: var(--cor-fundo-secundario) !important; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
         .footer-content { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
         .copyright { margin-top: 50px; font-size: 0.85rem; color: rgba(230, 230, 230, 0.6); border-top: 1px solid rgba(230, 230, 230, 0.1); padding-top: 20px; }
 
-        /* --- MOBILE (CELULAR) --- */
+        /* =========================================
+           VERSÃO CELULAR (MOBILE) - AJUSTE FINO 
+           ========================================= */
         @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
-            .hero-title { font-size: 2.2rem; }
-            .sprints-container { flex-direction: column; }
+            /* Alinhamentos gerais à esquerda */
+            p, h1, h2, h3, li, .hero-subtitle, .destaque-oferta, h4 { text-align: left !important; }
+            .hero-cover p, .hero-title, .hero-cover { text-align: center !important; } /* Exceção: Capa centralizada */
             
-            /* Alinhamento de Texto no Celular */
-            p, h1, h2, h3, li, .hero-title, .hero-subtitle, .destaque-oferta, h4 { text-align: left !important; }
             .container { padding: 20px 25px; }
             
-            /* Correção da Logo Mobile */
+            /* CAPA MOBILE */
             .hero-logo {
-                width: 100% !important; /* Força largura total */
-                max-width: 500px !important; /* Permite ficar maior */
-                margin: 20px auto !important;
+                width: 95% !important; /* Ocupa quase toda largura */
+                max-width: 400px !important; 
+                margin-top: -10% !important; /* Sobe um pouco para não ficar buraco */
+                margin-bottom: 15px !important;
+            }
+            .hero-cover p {
+                font-size: 1.2rem !important; /* Texto legível */
+                margin-bottom: 0 !important;
+                padding: 0 10px;
             }
             
-            /* Correção da Seta no Mobile */
+            /* Seta Mobile */
             .scroll-down {
+                bottom: 30px !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
-                bottom: 40px !important;
                 animation: bounce 2s infinite !important;
             }
             
-            /* Ajuste Cards Site */
-            .web-grid { grid-template-columns: 1fr !important; }
-            
-            /* Centraliza apenas título específico */
-            .destaque-oferta { text-align: center !important; }
-            
-            /* Ajuste do Texto da Capa para não grudar na seta */
-            .hero-cover p { margin-bottom: 100px !important; }
+            /* Ajustes Grids */
+            .grid-2, .web-grid, .sprints-container { grid-template-columns: 1fr !important; }
+            .destaque-oferta { text-align: center !important; font-size: 1.8rem !important; }
+            .btn-whatsapp-large { width: 100%; }
         }
     </style>
 </head>
@@ -585,6 +543,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
