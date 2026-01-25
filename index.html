@@ -239,21 +239,47 @@
         .whatsapp-float:hover { transform: scale(1.1); background-color: #6a9aa8; color: white;}
         .whatsapp-float:hover svg { fill: white; }
 
-/* --- Box de Alerta (Risco Real) - ESTILO TECH SOFISTICADO --- */
+/* --- Box de Alerta (INPI) - ESTILO AZUL CLARO TECH --- */
         .alert-box {
-            /* Fundo: Gradiente sutil de vermelho escuro para transparente */
-            background: linear-gradient(to right, rgba(80, 10, 10, 0.7), transparent);
+            /* Fundo: Gradiente sutil usando sua cor de destaque com transparência */
+            background: linear-gradient(to right, rgba(131, 172, 189, 0.25), transparent);
             padding: 25px;
-            /* Borda lateral fina e elegante */
-            border-left: 4px solid #ff4d4d;
-            /* Borda sutil brilhante ao redor */
-            border-top: 1px solid rgba(255, 77, 77, 0.2);
-            border-bottom: 1px solid rgba(255, 77, 77, 0.2);
-            border-right: 1px solid rgba(255, 77, 77, 0.2);
+            /* Borda lateral na cor de destaque sólida */
+            border-left: 5px solid var(--cor-destaque);
+            /* Bordas finas brilhantes ao redor */
+            border-top: 1px solid rgba(131, 172, 189, 0.4);
+            border-bottom: 1px solid rgba(131, 172, 189, 0.4);
+            border-right: 1px solid rgba(131, 172, 189, 0.2);
             margin-top: 25px;
             border-radius: 0 12px 12px 0; /* Arredondado só na direita */
-            /* Sombra suave avermelhada */
-            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.1);
+            /* Sombra suave azulada para dar um "glow" */
+            box-shadow: 0 10px 30px rgba(131, 172, 189, 0.2);
+            text-align: left !important;
+        }
+
+        /* Título dentro do alerta */
+        .alert-title {
+            color: var(--cor-destaque); /* Usa o azul claro da sua paleta */
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            display: flex; align-items: center;
+        }
+        
+        /* Garante que o ícone fique da mesma cor */
+        .alert-title svg {
+            fill: var(--cor-destaque) !important;
+        }
+
+        /* Texto do parágrafo */
+        .alert-box p {
+            color: #ffffff; /* Texto branco para contraste máximo */
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin: 0;
+            line-height: 1.5;
         }
 
         /* Título dentro do alerta */
@@ -657,6 +683,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
