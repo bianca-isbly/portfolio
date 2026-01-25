@@ -58,27 +58,30 @@
             padding: 0 20px;
         }
         
-        /* LOGO GIGANTE E IMPONENTE */
+/* LOGO GIGANTE (Forçando tamanho com base na tela) */
         .hero-logo {
-            width: 100%;           /* Tenta ocupar a largura disponível */
-            max-width: 900px;      /* Limite máximo no PC (Bem grande) */
+            width: 60vw; /* Ocupa 60% da largura da tela (Vai ficar enorme) */
+            max-width: 1000px; 
             height: auto;
             border: none;
             border-radius: 0;
-            margin: 0 auto 30px auto; /* Margem inferior de 30px para afastar do texto */
             display: block;
+            
+            /* TRUQUE: Margens negativas para "cortar" o espaço vazio da imagem */
+            margin-top: 0; 
+            margin-bottom: -40px; /* Puxa o texto de baixo para perto da logo */
+            
             animation: fadeIn 1.5s ease-in;
         }
 
-        /* TEXTO DA CAPA (Aquele que você quer arrumar) */
+        /* Texto abaixo da logo (Ajustado para não descer tanto) */
         .hero-cover p {
-            font-size: 1.6rem;       /* Fonte grande no PC */
-            font-weight: 400;        /* Peso da fonte equilibrado */
-            color: #e6e6e6;          /* Cor clara */
+            font-size: 1.5rem;
             opacity: 0.9;
-            margin-bottom: 0;        /* Remove margem extra inferior */
-            max-width: 800px;        /* Não deixa a frase ficar muito comprida */
-            line-height: 1.4;
+            margin-top: 0;
+            padding-bottom: 80px; /* Garante que não encoste na seta */
+            position: relative;
+            z-index: 5; /* Garante que o texto fique sobre a logo se encostar */
         }
 
         /* SETA ANIMADA (RESTAURADA) */
@@ -214,17 +217,18 @@
             
             .container { padding: 20px 25px; }
             
-            /* CAPA MOBILE */
+/* AJUSTE FINO DO CELULAR */
             .hero-logo {
-                width: 95% !important; /* Ocupa quase toda largura */
-                max-width: 400px !important; 
-                margin-top: -10% !important; /* Sobe um pouco para não ficar buraco */
-                margin-bottom: 15px !important;
+                width: 95vw !important; /* Quase a largura toda do celular */
+                max-width: none !important; /* Sem limite */
+                margin-top: -15vh !important; /* Sobe a logo para não ficar no meio baixo */
+                margin-bottom: -30px !important; /* Aproxima o texto */
             }
+
             .hero-cover p {
-                font-size: 1.2rem !important; /* Texto legível */
-                margin-bottom: 0 !important;
-                padding: 0 10px;
+                font-size: 1.1rem !important;
+                padding: 0 20px;
+                margin-bottom: 60px !important; /* Espaço para a seta */
             }
             
             /* Seta Mobile */
@@ -543,6 +547,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
