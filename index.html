@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camargo Tech & Design</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-        /* --- NOVA IDENTIDADE VISUAL: CAMARGO TECH & DESIGN --- */
+<style>
+        /* --- CONFIGURAÇÕES GERAIS E CORES --- */
         :root {
             --cor-fundo-principal: #101527; /* Azul marinho profundo */
             --cor-texto-claro: #e6e6e6;     /* Cinza claro */
             --cor-destaque: #83acbd;        /* Azul acinzentado */
             --cor-fundo-secundario: #233652; /* Azul médio */
-            
             --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -34,7 +33,7 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
         
-        /* Imagens gerais */
+        /* Imagens gerais (com borda sutil) */
         img { max-width: 100%; height: auto; border-radius: 8px; display: block; border: 1px solid #233652; }
         
         .grid-2 { 
@@ -49,20 +48,23 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             text-align: center;
             background: linear-gradient(135deg, var(--cor-fundo-principal) 0%, var(--cor-fundo-secundario) 100%);
             position: relative;
+            padding: 0 20px; /* Garante margem lateral no mobile */
         }
         
-        /* Logo Gigante na Capa */
+        /* LOGO GIGANTE E CENTRALIZADA */
         .hero-logo {
             width: 100%;
-            max-width: 1000px; /* Tamanho grande no PC */
+            max-width: 800px; /* Tamanho máximo no PC */
             height: auto;
             border: none;
             border-radius: 0;
-            margin-bottom: 20px;
+            margin: 20px 0; /* Espaço em cima e embaixo */
+            display: block;
             animation: fadeIn 1.5s ease-in;
         }
         
@@ -75,6 +77,7 @@
             font-weight: 600;
         }
 
+        /* SETA ANIMADA */
         .scroll-down {
             position: absolute;
             bottom: 30px;
@@ -84,6 +87,7 @@
             color: var(--cor-destaque);
             font-size: 2rem;
             cursor: pointer;
+            z-index: 10;
         }
 
         @keyframes bounce {
@@ -93,10 +97,8 @@
         }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- 2. SOBRE NÓS --- */
+        /* --- 2. SEÇÕES GERAIS --- */
         .about-section { padding: 80px 20px; background-color: var(--cor-fundo-principal); }
-        
-        /* SEÇÕES GERAIS */
         section { padding: 80px 0; border-bottom: 1px solid var(--cor-fundo-secundario); }
         .bg-light { background-color: var(--cor-fundo-secundario); border-bottom: none; }
         
@@ -146,7 +148,7 @@
             align-items: stretch;
         }
         .client-card {
-            background: #ffffff; /* Fundo branco para logos */
+            background: #ffffff;
             padding: 30px 20px;
             border-radius: 10px;
             border: 2px solid var(--cor-destaque);
@@ -158,108 +160,53 @@
         .client-card h3 { color: var(--cor-fundo-principal); font-size: 1.1rem; margin-bottom: 5px; }
         .client-card p { font-size: 0.9rem; line-height: 1.4; color: #555; margin: 0; text-align: center; }
 
-/* --- NOVA SEÇÃO: WEB DESIGN --- */
+        /* --- WEB DESIGN (CARDS) --- */
         .web-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-
         .web-card {
-            background: var(--cor-fundo-principal);
+            background: var(--cor-fundo-principal); /* Fundo escuro para contraste */
             padding: 30px 20px;
             border-radius: 15px;
             text-align: center;
-            border: 1px solid rgba(131, 172, 189, 0.3); /* Borda sutil na cor destaque */
+            border: 1px solid rgba(131, 172, 189, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .web-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(131, 172, 189, 0.15);
             border-color: var(--cor-destaque);
         }
-
-        .web-icon-container {
-            width: 70px;
-            height: 70px;
+        .web-icon-box {
+            width: 70px; height: 70px;
             margin: 0 auto 20px auto;
-            background: rgba(16, 21, 39, 0.5); /* Fundo escuro para o ícone */
+            background: rgba(16, 21, 39, 0.5);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--cor-destaque);
-        }
-        
-        .web-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        /* --- BOTÕES E RODAPÉ --- */
-        .btn-whatsapp-large {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #5fde3b;
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 800;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(131, 172, 189, 0.4);
-            transition: transform 0.3s, background-color 0.3s;
-            margin: 20px auto;
-        }
-        .btn-whatsapp-large:hover { transform: scale(1.05); background-color: #6a9aa8; color: white; }
-        .btn-whatsapp-large svg { fill: #ffffff); }
-        .btn-whatsapp-large:hover svg { fill: white; }
-        
-        footer { background: var(--cor-fundo-secundario); text-align: center; padding: 60px 20px 20px 20px; border-top: 1px solid #1a2035; }
-        
-        .copyright {
-            margin-top: 50px;
-            font-size: 0.85rem;
-            color: rgba(230, 230, 230, 0.6);
-            border-top: 1px solid rgba(230, 230, 230, 0.1);
-            padding-top: 20px;
-        }
-
-        .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
-            background-color: var(--cor-destaque); color: var(--cor-fundo-principal); border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 2px 2px 15px rgba(131, 172, 189, 0.4); z-index: 100; transition: 0.3s;
+            border: 2px solid var(--cor-destaque);
+            color: var(--cor-destaque);
         }
-        .whatsapp-float svg { fill: var(--cor-fundo-principal); }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #6a9aa8; color: white;}
-        .whatsapp-float:hover svg { fill: white; }
+        .web-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: white; }
+        .web-card p { color: #ccc; }
 
-/* --- Box de Alerta (INPI) - ESTILO AZUL CLARO TECH --- */
+        /* --- ALERTA INPI (VISUAL CLEAN/TECH) --- */
         .alert-box {
-            /* Fundo: Gradiente sutil usando sua cor de destaque com transparência */
             background: linear-gradient(to right, rgba(131, 172, 189, 0.25), transparent);
             padding: 25px;
-            /* Borda lateral na cor de destaque sólida */
             border-left: 5px solid var(--cor-destaque);
-            /* Bordas finas brilhantes ao redor */
             border-top: 1px solid rgba(131, 172, 189, 0.4);
             border-bottom: 1px solid rgba(131, 172, 189, 0.4);
             border-right: 1px solid rgba(131, 172, 189, 0.2);
             margin-top: 25px;
-            border-radius: 0 12px 12px 0; /* Arredondado só na direita */
-            /* Sombra suave azulada para dar um "glow" */
+            border-radius: 0 12px 12px 0;
             box-shadow: 0 10px 30px rgba(131, 172, 189, 0.2);
             text-align: left !important;
         }
-
-        /* Título dentro do alerta */
         .alert-title {
-            color: #f0ff22;
+            color: var(--cor-destaque);
             margin-bottom: 12px;
             font-size: 1.2rem;
             text-transform: uppercase;
@@ -267,151 +214,100 @@
             font-weight: 800;
             display: flex; align-items: center;
         }
-        
-        /* Garante que o ícone fique da mesma cor */
-        .alert-title svg {
-            fill: var(--cor-destaque) !important;
-        }
+        .alert-title svg { fill: var(--cor-destaque) !important; }
+        .alert-box p { color: #ffffff; font-weight: 500; font-size: 1.05rem; margin: 0; line-height: 1.5; }
 
-        /* Texto do parágrafo */
-        .alert-box p {
-            color: #ffffff; /* Texto branco para contraste máximo */
-            font-weight: 500;
-            font-size: 1.05rem;
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        /* Título dentro do alerta */
-        .alert-title {
-            color: #ffe61a;
-            margin-bottom: 12px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 800;
-            display: flex; align-items: center; /* Alinha o ícone */
-        }
-
-        /* Texto do parágrafo */
-        .alert-box p {
-            color: #eeeeee; /* Texto bem claro para leitura fácil */
-            font-weight: 400;
-            font-size: 1rem;
-            margin: 0;
-            line-height: 1.5;
-            text-align: left;
-        }
-
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
-            .hero-title { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 1rem; }
-            .destaque-oferta { font-size: 1.8rem; }
-            .sprints-container { flex-direction: column; }
-            
-            p, h1, h2, h3, li, .hero-title, .hero-subtitle, .destaque-oferta, h4 {
-                text-align: left !important;
-            }
-            .hero-cover { align-items: flex-start; text-align: left; padding-left: 25px; }
-            .container { padding: 20px 25px; }
-            .scroll-down { left: 25px; transform: translateX(0); }
-            .btn-whatsapp-large { width: 100%; }
-        }
-
-        /* --- BOTÕES WHATSAPP (VERDE OFICIAL) --- */
+        /* --- BOTÃO WHATSAPP OFICIAL (VERDE) --- */
         .btn-whatsapp-verde {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: #25D366; /* Verde Oficial do WhatsApp */
-            color: #ffffff !important; /* Texto Branco Forçado */
+            background-color: #25D366; /* Verde Oficial */
+            color: #ffffff !important;
             font-size: 1.1rem;
             font-weight: 700;
             padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
-            /* Sombra verde brilhante */
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); 
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s;
             margin: 15px auto;
             border: none;
         }
+        .btn-whatsapp-verde:hover { background-color: #128C7E; transform: translateY(-3px); }
+        .btn-whatsapp-verde svg { fill: #ffffff !important; width: 24px; height: 24px; margin-right: 10px; }
 
-        .btn-whatsapp-verde:hover {
-            background-color: #128C7E; /* Verde mais escuro no mouse */
-            transform: translateY(-3px); /* Efeito de pular */
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
-
-        .btn-whatsapp-verde svg {
-            fill: #ffffff !important; /* Ícone Branco */
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        /* --- BOTÃO FLUTUANTE (CANTO DIREITO) --- */
+        /* --- FLUTUANTE --- */
         .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366; /* Verde Oficial */
-            color: #FFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.5); /* Sombra verde */
-            z-index: 1000;
-            transition: all 0.3s ease;
+            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+            background-color: #25D366; color: #FFF; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.5); z-index: 1000;
+            transition: 0.3s;
         }
+        .whatsapp-float svg { fill: #ffffff !important; width: 35px; height: 35px; }
+        .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
 
-        .whatsapp-float svg {
-            fill: #ffffff !important;
-            width: 35px;
-            height: 35px;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-        }
-        
-        /* --- AJUSTE DE CENTRALIZAÇÃO DO RODAPÉ --- */
+        /* --- RODAPÉ CENTRALIZADO --- */
         .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; width: 100%;
+        }
+        .copyright {
+            margin-top: 50px; font-size: 0.85rem; color: rgba(230, 230, 230, 0.6);
+            border-top: 1px solid rgba(230, 230, 230, 0.1); padding-top: 20px;
         }
 
-/* --- CORREÇÃO FINAL: SETA E ANIMAÇÃO MOBILE --- */
+        /* --- MEDIA QUERIES (CELULAR) - CORREÇÕES FINAIS --- */
         @media (max-width: 768px) {
-            .scroll-down {
-                /* Força a ir para o meio exato da tela */
-                left: 50% !important;
-                right: auto !important;
-                /* Centraliza compensando o tamanho dela */
-                transform: translateX(-50%) !important;
-                
-                /* Garante que fique VISÍVEL acima de tudo */
-                z-index: 9999 !important;
+            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
+            .sprints-container { flex-direction: column; }
+
+            /* Alinhamento geral à esquerda no celular (exceto capa) */
+            p, h1, h2, h3, h4, li {
+                text-align: left !important;
+            }
+
+            /* --- CORREÇÃO DA CAPA (HERO) NO CELULAR --- */
+            .hero-cover {
+                align-items: center !important; /* Força centralizar tudo na capa */
+                text-align: center !important;
+                padding: 0 20px;
+            }
+            
+            /* Correção da Logo */
+            .hero-logo {
+                width: 90% !important; /* Ocupa largura boa */
+                max-width: 350px !important; /* Limite para não estourar */
+                margin: 20px auto !important; /* Margem automática centraliza */
                 display: block !important;
-                opacity: 1 !important;
-                
-                /* Sobe um pouquinho (50px) para não ficar escondida atrás da barra do navegador no celular */
-                bottom: 50px !important; 
-                
-                /* Força a animação de pular a funcionar */
+            }
+
+            /* Texto da capa centralizado */
+            .hero-title, .hero-subtitle, .hero-cover p {
+                text-align: center !important;
+            }
+
+            /* Correção da Seta */
+            .scroll-down {
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                bottom: 80px !important; /* Mais para cima para não sumir */
+                z-index: 9999;
                 animation: bounce 2s infinite !important;
             }
+            
+            /* Título centralizado dos serviços */
+            .destaque-oferta {
+                text-align: center !important;
+            }
+            
+            /* Rodapé centralizado */
+            .footer-content h2, .footer-content p, .footer-content h3 {
+                text-align: center !important;
+            }
         }
-        
     </style>
 </head>
 <body>
@@ -715,6 +611,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
