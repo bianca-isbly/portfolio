@@ -6,12 +6,13 @@
     <title>Camargo Tech & Design</title>
     <link rel="icon" type="image/png" href="favicon.png">
 <style>
-        /* --- CONFIGURAÇÕES GERAIS E CORES --- */
+        /* --- CONFIGURAÇÕES GERAIS E PALETA --- */
         :root {
             --cor-fundo-principal: #101527; /* Azul marinho profundo */
             --cor-texto-claro: #e6e6e6;     /* Cinza claro */
             --cor-destaque: #83acbd;        /* Azul acinzentado */
             --cor-fundo-secundario: #233652; /* Azul médio */
+            
             --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -32,8 +33,6 @@
         p { margin-bottom: 1rem; text-align: justify; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        
-        /* Imagens gerais (com borda sutil) */
         img { max-width: 100%; height: auto; border-radius: 8px; display: block; border: 1px solid #233652; }
         
         .grid-2 { 
@@ -43,7 +42,7 @@
             align-items: center; 
         }
 
-        /* --- 1. CAPA (HERO) --- */
+        /* --- 1. CAPA (HERO) - AJUSTADA --- */
         .hero-cover {
             height: 100vh;
             display: flex;
@@ -53,37 +52,7 @@
             text-align: center;
             background: linear-gradient(135deg, var(--cor-fundo-principal) 0%, var(--cor-fundo-secundario) 100%);
             position: relative;
-            padding: 0 20px; /* Garante margem lateral no mobile */
-        }
-        
-/* --- AJUSTES DA CAPA (HERO) --- */
-        .hero-cover {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px; /* Garante que não encoste nas bordas laterais */
-            position: relative;
-        }
-
-        .hero-logo {
-            width: 100%;
-            max-width: 1500px; /* Aumentei para ficar bem imponente no PC */
-            height: auto;
-            border: none;
-            border-radius: 0;
-            margin: 10px auto 20px auto; /* Reduzi as margens verticais da logo */
-            display: block;
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        /* Aumenta espaço entre o texto e a seta no PC */
-        .hero-cover p {
-            font-size: 1.3rem; 
-            opacity: 0.9;
-            margin-bottom: 60px; /* <--- AQUI: Empurra a seta para baixo */
+            padding: 0 20px;
         }
         
         .hero-subtitle {
@@ -95,19 +64,38 @@
             font-weight: 600;
         }
 
-        /* SETA ANIMADA */
+        /* LOGO GIGANTE NO PC */
+        .hero-logo {
+            width: 100%;
+            max-width: 1000px; /* Aumentei para ficar enorme no PC */
+            height: auto;
+            border: none;
+            border-radius: 0;
+            margin: 20px auto; 
+            display: block;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        /* Texto abaixo da logo */
+        .hero-cover p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 80px; /* Empurra a seta para baixo */
+        }
+
+        /* ANIMAÇÃO DA SETA (RESTAURADA) */
         .scroll-down {
             position: absolute;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            animation: bounce 2s infinite;
             color: var(--cor-destaque);
             font-size: 2rem;
             cursor: pointer;
-            z-index: 10;
+            animation: bounce 2s infinite; /* Chama a animação */
         }
 
+        /* DEFINIÇÃO DA ANIMAÇÃO (O código que faltava) */
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
             40% {transform: translateY(-10px) translateX(-50%);}
@@ -115,10 +103,14 @@
         }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- 2. SEÇÕES GERAIS --- */
+        /* --- 2. SOBRE NÓS --- */
         .about-section { padding: 80px 20px; background-color: var(--cor-fundo-principal); }
+        
+        /* SEÇÕES GERAIS */
         section { padding: 80px 0; border-bottom: 1px solid var(--cor-fundo-secundario); }
-        .bg-light { background-color: var(--cor-fundo-secundario); border-bottom: none; }
+        
+        /* Fundo Azul Médio (Corrigido) */
+        .bg-light { background-color: var(--cor-fundo-secundario) !important; border-bottom: none; }
         
         .card-list { list-style: none; }
         .card-list li {
@@ -159,11 +151,35 @@
             border: 2px solid var(--cor-destaque);
         }
 
+        /* --- WEB DESIGN CARDS --- */
+        .web-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .web-card {
+            background: var(--cor-fundo-principal); /* Escuro para contrastar com fundo médio */
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(131, 172, 189, 0.1);
+            transition: 0.3s;
+        }
+        .web-card:hover { transform: translateY(-10px); border-color: var(--cor-destaque); }
+        .web-icon-box {
+            width: 70px; height: 70px; margin: 0 auto 20px auto;
+            background: rgba(16, 21, 39, 0.5); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            border: 2px solid var(--cor-destaque); color: var(--cor-destaque);
+        }
+        .web-card h3 { color: #fff; font-size: 1.3rem; margin-bottom: 10px; }
+        .web-card p { color: #ccc; font-size: 0.95rem; }
+
         /* --- CLIENTES --- */
         .clients-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px; 
-            align-items: stretch;
+            gap: 30px; align-items: stretch;
         }
         .client-card {
             background: #ffffff;
@@ -178,39 +194,15 @@
         .client-card h3 { color: var(--cor-fundo-principal); font-size: 1.1rem; margin-bottom: 5px; }
         .client-card p { font-size: 0.9rem; line-height: 1.4; color: #555; margin: 0; text-align: center; }
 
-        /* --- WEB DESIGN (CARDS) --- */
-        .web-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        /* --- TICKET --- */
+        .ticket-image-container { max-width: 800px; margin: 30px auto; text-align: center; }
+        .ticket-image-container img { width: 100%; box-shadow: 0 10px 30px rgba(131, 172, 189, 0.2); border: none; }
+        .destaque-oferta {
+            font-size: 2.8rem; color: var(--cor-destaque); font-weight: 800;
+            text-align: center; line-height: 1.2; margin-bottom: 10px; text-transform: uppercase;
         }
-        .web-card {
-            background: var(--cor-fundo-principal); /* Fundo escuro para contraste */
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(131, 172, 189, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .web-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(131, 172, 189, 0.15);
-            border-color: var(--cor-destaque);
-        }
-        .web-icon-box {
-            width: 70px; height: 70px;
-            margin: 0 auto 20px auto;
-            background: rgba(16, 21, 39, 0.5);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            border: 2px solid var(--cor-destaque);
-            color: var(--cor-destaque);
-        }
-        .web-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: white; }
-        .web-card p { color: #ccc; }
 
-        /* --- ALERTA INPI (VISUAL CLEAN/TECH) --- */
+        /* --- ALERTA INPI (Azul Tech) --- */
         .alert-box {
             background: linear-gradient(to right, rgba(131, 172, 189, 0.25), transparent);
             padding: 25px;
@@ -223,170 +215,72 @@
             box-shadow: 0 10px 30px rgba(131, 172, 189, 0.2);
             text-align: left !important;
         }
-        .alert-title {
-            color: var(--cor-destaque);
-            margin-bottom: 12px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 800;
-            display: flex; align-items: center;
-        }
+        .alert-title { color: var(--cor-destaque); margin-bottom: 12px; font-size: 1.2rem; text-transform: uppercase; font-weight: 800; display: flex; align-items: center; }
         .alert-title svg { fill: var(--cor-destaque) !important; }
         .alert-box p { color: #ffffff; font-weight: 500; font-size: 1.05rem; margin: 0; line-height: 1.5; }
 
-        /* --- BOTÃO WHATSAPP OFICIAL (VERDE) --- */
+        /* --- BOTÕES VERDES --- */
         .btn-whatsapp-verde {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #25D366; /* Verde Oficial */
-            color: #ffffff !important;
-            font-size: 1.1rem;
-            font-weight: 700;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
+            display: inline-flex; align-items: center; justify-content: center;
+            background-color: #25D366; color: #ffffff !important;
+            font-size: 1.1rem; font-weight: 700; padding: 15px 35px;
+            border-radius: 50px; text-decoration: none;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s;
-            margin: 15px auto;
-            border: none;
+            transition: transform 0.3s, background-color 0.3s; margin: 15px auto; border: none;
         }
         .btn-whatsapp-verde:hover { background-color: #128C7E; transform: translateY(-3px); }
         .btn-whatsapp-verde svg { fill: #ffffff !important; width: 24px; height: 24px; margin-right: 10px; }
 
-        /* --- FLUTUANTE --- */
         .whatsapp-float {
             position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
             background-color: #25D366; color: #FFF; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.5); z-index: 1000;
-            transition: 0.3s;
+            box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.5); z-index: 1000; transition: 0.3s;
         }
         .whatsapp-float svg { fill: #ffffff !important; width: 35px; height: 35px; }
         .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
 
-        /* --- RODAPÉ CENTRALIZADO --- */
-        .footer-content {
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            text-align: center; width: 100%;
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: var(--cor-fundo-secundario) !important; /* Corrigido para azul médio */
+            padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .copyright {
-            margin-top: 50px; font-size: 0.85rem; color: rgba(230, 230, 230, 0.6);
-            border-top: 1px solid rgba(230, 230, 230, 0.1); padding-top: 20px;
-        }
+        .footer-content { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
+        .copyright { margin-top: 50px; font-size: 0.85rem; color: rgba(230, 230, 230, 0.6); border-top: 1px solid rgba(230, 230, 230, 0.1); padding-top: 20px; }
 
-/* --- AJUSTES ESPECÍFICOS PARA CELULAR --- */
+        /* --- MOBILE (CELULAR) --- */
         @media (max-width: 768px) {
-            .hero-cover {
-                justify-content: center; /* Mantém centralizado */
-            }
-
+            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
+            .hero-title { font-size: 2.2rem; }
+            .sprints-container { flex-direction: column; }
+            
+            /* Alinhamento de Texto no Celular */
+            p, h1, h2, h3, li, .hero-title, .hero-subtitle, .destaque-oferta, h4 { text-align: left !important; }
+            .container { padding: 20px 25px; }
+            
+            /* Correção da Logo Mobile */
             .hero-logo {
-                width: 100% !important; /* Ocupa toda a largura disponível */
-                max-width: 450px !important; /* Permite ficar maior no celular */
-                margin-top: -15% !important; /* <--- TRUQUE: Puxa a logo pra cima visualmente */
-                margin-bottom: 20px !important;
-            }
-
-            .hero-cover p {
-                font-size: 1.1rem; /* Texto um pouco menor para caber melhor */
-                padding: 0 10px; /* Margem lateral para não bater na borda */
-                margin-bottom: 40px; /* Espaço para a seta não grudar */
-            }
-
-            /* Garante a seta centralizada e visível */
-            .scroll-down {
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                bottom: 25px !important;
-            }
-        }
-
-            /* Alinhamento geral à esquerda no celular (exceto capa) */
-            p, h1, h2, h3, h4, li {
-                text-align: left !important;
-            }
-
-            /* --- CORREÇÃO DA CAPA (HERO) NO CELULAR --- */
-            .hero-cover {
-                align-items: center !important; /* Força centralizar tudo na capa */
-                text-align: center !important;
-                padding: 0 20px;
+                width: 100% !important; /* Força largura total */
+                max-width: 500px !important; /* Permite ficar maior */
+                margin: 20px auto !important;
             }
             
-            /* Correção da Logo */
-            .hero-logo {
-                width: 90% !important; /* Ocupa largura boa */
-                max-width: 350px !important; /* Limite para não estourar */
-                margin: 20px auto !important; /* Margem automática centraliza */
-                display: block !important;
-            }
-
-            /* Texto da capa centralizado */
-            .hero-title, .hero-subtitle, .hero-cover p {
-                text-align: center !important;
-            }
-
-            /* Correção da Seta */
+            /* Correção da Seta no Mobile */
             .scroll-down {
                 left: 50% !important;
                 transform: translateX(-50%) !important;
-                bottom: 80px !important; /* Mais para cima para não sumir */
-                z-index: 9999;
+                bottom: 40px !important;
                 animation: bounce 2s infinite !important;
             }
             
-            /* Título centralizado dos serviços */
-            .destaque-oferta {
-                text-align: center !important;
-            }
+            /* Ajuste Cards Site */
+            .web-grid { grid-template-columns: 1fr !important; }
             
-            /* Rodapé centralizado */
-            .footer-content h2, .footer-content p, .footer-content h3 {
-                text-align: center !important;
-            }
-        }
-
-    /* --- CORREÇÃO DE CORES (RESGATE) --- */
-        /* Garante que o fundo azul médio apareça */
-        .bg-light {
-            background-color: var(--cor-fundo-secundario) !important;
-        }
-
-        /* Garante que o rodapé tenha a cor certa */
-        footer {
-            background-color: var(--cor-fundo-secundario) !important;
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* --- AJUSTES FINAIS PARA CELULAR --- */
-        @media (max-width: 768px) {
-            /* Arruma a Logo que estava pequena/feia */
-            .hero-logo {
-                width: 85% !important;
-                max-width: 320px !important;
-                margin: 40px auto 20px auto !important;
-            }
-
-            /* Arruma os Cards de Site no celular */
-            .web-grid {
-                grid-template-columns: 1fr !important; /* Uma coluna perfeita */
-                gap: 20px; /* Espaço menor entre eles */
-            }
+            /* Centraliza apenas título específico */
+            .destaque-oferta { text-align: center !important; }
             
-            .web-card {
-                padding: 25px 15px; /* Espaçamento interno confortável */
-            }
-            
-            /* Título centralizado no mobile */
-            .destaque-oferta {
-                font-size: 1.8rem !important;
-                line-height: 1.3;
-            }
+            /* Ajuste do Texto da Capa para não grudar na seta */
+            .hero-cover p { margin-bottom: 100px !important; }
         }
     </style>
 </head>
@@ -691,6 +585,7 @@
         </div>
     </footer>
 </html>
+
 
 
 
